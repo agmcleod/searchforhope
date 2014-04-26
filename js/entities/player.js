@@ -11,8 +11,8 @@ game.Player = me.ObjectEntity.extend({
     this.health = 3;
     this.dashing = false;
     this.direction = new me.Vector2d();
-    this.dashVel = new me.Vector2d(30, 30);
-    this.setFriction(2, 0);
+    this.dashVel = new me.Vector2d(30, 20);
+    this.setFriction(1.5, 0);
   },
 
   damagedCallback: function() {
