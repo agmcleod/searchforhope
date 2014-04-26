@@ -35,6 +35,7 @@
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
+  <object name="greenthing" x="1375" y="510" width="32" height="32"/>
  </objectgroup>
  <layer name="collision" width="60" height="20">
   <data encoding="base64">

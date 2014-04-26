@@ -1,4 +1,5 @@
 game.resources = [
+  { name: 'greenthing', type: 'image', src: 'data/img/greenthing.png' },
   { name: 'introbackground', type: 'image', src: 'data/map/introbackground.png' },
   { name: 'intro', type: 'tmx', src: 'data/map/intro.tmx' },
   { name: 'levelone', type: 'tmx', src: 'data/map/levelone.tmx' },

@@ -4,9 +4,16 @@ game.Player = me.ObjectEntity.extend({
     this.setVelocity(3, 20);
     this.getShape().resize(28, 32);
     this.getShape().translate(2, 0);
+    this.renderable.addAnimation('dash', [0], 1);
     this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
     this.renderable.setCurrentAnimation('run');
     me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+    this.health = 3;
+    this.dashing = false;
+  },
+
+  damagedCallback: function() {
+    this.damaged = false;
   },
 
   update: function(time) {
@@ -31,7 +38,24 @@ game.Player = me.ObjectEntity.extend({
     }
 
 
-    me.game.world.collide(this);
+    var res = me.game.world.collide(this);
+
+    if(res && res.obj.type === me.game.ENEMY_OBJECT) {
+      if(this.dashing) {
+
+      }
+      else if(!this.damaged) {
+        this.damaged = true;
+        this.health -= 1;
+        if(this.health <= 0) {
+          me.levelDirector.reloadLevel.defer();
+        }
+        else {
+          this.renderable.flicker(400, this.damagedCallback.bind(this));
+        }
+      }
+    }
+
     this.updateMovement();
     if(this.vel.x !== 0 || this.vel.y !== 0) {
       this._super(me.ObjectEntity, 'update', [time]);

@@ -10,6 +10,7 @@ game.PlayScreen = me.ScreenObject.extend({
   onResetEvent: function() {
     this.bindKeys();
     me.pool.register('player', game.Player);
+    me.pool.register('greenthing', game.GreenThing, true);
     me.levelDirector.loadLevel('intro');
   },
 
