@@ -10,13 +10,17 @@ game.Player = me.ObjectEntity.extend({
     me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
     this.health = 3;
     this.dashing = false;
+    this.direction = new me.Vector2d();
+    this.dashVel = new me.Vector2d(300, 50);
+    this.distanceTravelled = new me.Vector2d();
+    this.setFriction(10, 0);
   },
 
   damagedCallback: function() {
     this.damaged = false;
   },
 
-  update: function(time) {
+  handleInput: function() {
     if (me.input.isKeyPressed('left')) {
       this.flipX(true);
       this.vel.x -= this.accel.x * me.timer.tick;
@@ -25,39 +29,138 @@ game.Player = me.ObjectEntity.extend({
       this.flipX(false);
       this.vel.x += this.accel.x * me.timer.tick;
     }
-    else {
+    else if(!this.dashing) {
       this.vel.x = 0;
     }
 
     if (me.input.isKeyPressed('jump') && !this.jumping && !this.falling) {
-      // set current vel to the maximum defined value
-      // gravity will then do the rest
       this.vel.y = -this.maxVel.y * me.timer.tick;
-      // set the jumping flag
       this.jumping = true;
     }
 
+    if (me.input.isKeyPressed('dash') && !this.dashing && !this.falling) {
+      game.dash.init(this);
+    }
+  },
 
-    var res = me.game.world.collide(this);
+  moveByVelocity: function() {
+    this.computeVelocity(this.vel);
 
-    if(res && res.obj.type === me.game.ENEMY_OBJECT) {
-      if(this.dashing) {
+    // Adjust position only on collidable object
+    var collision;
+    // save the collision box offset
+    this._bounds = this.getBounds(this._bounds);
+    this.__offsetX = this._bounds.pos.x;
+    this.__offsetY = this._bounds.pos.y;
+    this._bounds.translateV(this.pos);
 
-      }
-      else if(!this.damaged) {
-        this.damaged = true;
-        this.health -= 1;
-        if(this.health <= 0) {
-          me.levelDirector.reloadLevel.defer();
+    // check for collision
+    collision = this.collisionMap.checkCollision(this._bounds, this.vel);
+
+    // update some flags
+    this.onslope  = collision.yprop.isSlope || collision.xprop.isSlope;
+    // clear the ladder flag
+    this.onladder = false;
+    var prop = collision.yprop;
+    var tile = collision.ytile;
+
+    // y collision
+    if (collision.y) {
+      // going down, collision with the floor
+      this.onladder = prop.isLadder || prop.isTopLadder;
+
+      if (collision.y > 0) {
+        if (prop.isSolid || (prop.isPlatform && (this._bounds.bottom - 1 <= tile.pos.y))) {
+          // adjust position to the corresponding tile
+          this._bounds.pos.y = ~~this._bounds.pos.y;
+          this.vel.y = 0;
+          this.falling = false;
         }
-        else {
-          this.renderable.flicker(400, this.damagedCallback.bind(this));
+        else if (prop.isSlope && !this.jumping) {
+          // we stop falling
+          this.checkSlope(
+            this._bounds,
+            tile,
+            prop.isLeftSlope
+          );
+          this.falling = false;
+        }
+      }
+      // going up, collision with ceiling
+      else if (collision.y < 0) {
+        if (!prop.isPlatform && !prop.isLadder && !prop.isTopLadder) {
+          if (this.gravity) {
+              this.falling = true;
+          }
+          // cancel the y velocity
+          this.vel.y = 0;
+        }
+      }
+    }
+    prop = collision.xprop;
+    tile = collision.xtile;
+
+    // x collision
+    if (collision.x) {
+      if (prop.isSlope && !this.jumping) {
+        this.checkSlope(this._bounds, tile, prop.isLeftSlope);
+        this.falling = false;
+      }
+      else {
+        // can walk through the platform
+        if (!prop.isPlatform) {
+          this.vel.x = 0;
         }
       }
     }
 
-    this.updateMovement();
-    if(this.vel.x !== 0 || this.vel.y !== 0) {
+    this.pos.set(
+      this._bounds.pos.x - this.__offsetX,
+      this._bounds.pos.y - this.__offsetY
+    );
+
+    // update player position
+    this.pos.add(this.vel);
+  },
+
+  setDefaultAnimation: function() {
+    this.renderable.setCurrentAnimation('run');
+  },
+
+  update: function(time) {
+    this.handleInput();
+
+    var res = me.game.world.collide(this);
+
+    if (res) {
+      if (res.obj.type === me.game.ENEMY_OBJECT) {
+        if (!this.dashing && !this.damaged) {
+          this.damaged = true;
+          this.health -= 1;
+          if(this.health <= 0) {
+            me.levelDirector.reloadLevel.defer();
+          }
+          else {
+            this.renderable.flicker(400, this.damagedCallback.bind(this));
+          }
+        }
+      }
+      else {
+        this.dashing = false;
+        this.setDefaultAnimation();
+      }  
+    }
+    
+
+    if (this.dashing) {
+      //game.dash.move(this);
+      //this.moveByVelocity();
+    }
+    //else {
+      this.updateMovement();
+    //}
+    
+    if (this.vel.x !== 0 || this.vel.y !== 0) {
       this._super(me.ObjectEntity, 'update', [time]);
       return true;
     }

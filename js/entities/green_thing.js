@@ -8,6 +8,6 @@ game.GreenThing = me.ObjectEntity.extend({
   },
 
   onCollision: function(res, obj) {
-    game.Enemy.onCollision(this, res, obj);
+    game.enemy.onCollision(this, res, obj);
   },
 });
