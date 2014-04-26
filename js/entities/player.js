@@ -30,9 +30,6 @@ game.Player = me.ObjectEntity.extend({
       this.vel.x += this.accel.x * me.timer.tick;
       this.movementSetup();
     }
-    else if(!this.dashing) {
-      this.vel.x = 0;
-    }
 
     if (me.input.isKeyPressed('jump') && !this.jumping && !this.falling) {
       this.vel.y = -this.maxVel.y * me.timer.tick;
@@ -63,7 +60,7 @@ game.Player = me.ObjectEntity.extend({
   },
 
   setVel: function() {
-    this.setMaxVelocity(3, 20);
+    this.setVelocity(3, 20);
   },
 
   update: function(time) {
