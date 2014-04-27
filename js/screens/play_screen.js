@@ -6,13 +6,19 @@ game.PlayScreen = me.ScreenObject.extend({
     me.input.bindKey(me.input.KEY.E, 'dash');
     me.input.bindPointer(me.input.KEY.E);
   },
+
+  lowerHealth: function() {
+    this.playerHealth--;
+  },
   /**
    *  action to perform on state change
    */
   onResetEvent: function() {
     this.bindKeys();
+    this.uiFont = new me.Font('Arial', '10px', '#ff0000');
     me.pool.register('player', game.Player);
     me.pool.register('greenthing', game.GreenThing, true);
+    this.resetHealth();
     me.levelDirector.loadLevel('intro');
   },
 
@@ -26,5 +32,9 @@ game.PlayScreen = me.ScreenObject.extend({
     me.input.unbindKey(me.input.KEY.E);
     me.input.unbindKey(me.input.KEY.SPACE);
     me.input.unbindPointer();
+  },
+
+  resetHealth: function() {
+    this.playerHealth = 3;
   }
 });

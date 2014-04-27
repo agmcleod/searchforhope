@@ -8,7 +8,7 @@ game.Player = me.ObjectEntity.extend({
     this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
     this.renderable.setCurrentAnimation('run');
     me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-    this.health = 3;
+    this.health = game.playScreen.playerHealth;
     this.dashing = false;
     this.direction = new me.Vector2d();
     this.dashVel = new me.Vector2d(30, 20);
@@ -17,6 +17,13 @@ game.Player = me.ObjectEntity.extend({
 
   damagedCallback: function() {
     this.damaged = false;
+  },
+
+  draw: function(context) {
+    this._super(me.ObjectEntity, 'draw', [context]);
+    if(this.damaged) {
+      game.playScreen.uiFont.draw(context, this.health, this.pos.x - 10, this.pos.y - 10);
+    }
   },
 
   handleInput: function() {
@@ -70,14 +77,18 @@ game.Player = me.ObjectEntity.extend({
 
     if (res) {
       if (res.obj.type === me.game.ENEMY_OBJECT) {
-        if (!this.dashing && !this.damaged) {
+        if (!this.damaged) {
           this.damaged = true;
           this.health -= 1;
+          game.playScreen.lowerHealth();
           if(this.health <= 0) {
-            me.levelDirector.reloadLevel.defer();
+            game.playScreen.resetHealth();
+            this.renderable.flicker(300, function() {
+              me.levelDirector.loadLevel.defer(this, 'intro');
+            });
           }
           else {
-            this.renderable.flicker(400, this.damagedCallback.bind(this));
+            this.renderable.flicker(300, this.damagedCallback.bind(this));
           }
         }
       }
@@ -91,11 +102,10 @@ game.Player = me.ObjectEntity.extend({
     
     if (this.vel.x !== 0 || this.vel.y !== 0) {
       this._super(me.ObjectEntity, 'update', [time]);
-      return true;
     }
     else {
       this.dashing = false;
-      return false;
     }
+    return true;
   }
 });

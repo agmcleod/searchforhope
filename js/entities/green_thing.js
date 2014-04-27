@@ -10,4 +10,9 @@ game.GreenThing = me.ObjectEntity.extend({
   onCollision: function(res, obj) {
     game.enemy.onCollision(this, res, obj);
   },
+
+  update: function(time) {
+    this._super(me.ObjectEntity, 'update', [time]);
+    return true;
+  }
 });
