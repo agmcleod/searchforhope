@@ -31,3 +31,8 @@ body {
 	image-rendering: optimize-contrast;
 	-ms-interpolation-mode: nearest-neighbor;
 }
+
+p {
+	text-align:center;
+	font-family:Helvetica, Arial, sans-serif;
+}
