@@ -24,6 +24,13 @@ game.PlayScreen = me.ScreenObject.extend({
     me.levelDirector.loadLevel('intro');
     me.audio.playTrack('Ld29p1');
 
+    this.drawMessageOne = true;
+    this.drawMessageTwo = false;
+
+    var mt = new game.MessageTimer('drawMessageOne');
+    mt.setStartTime();
+    me.game.world.addChild(mt, 0);
+
     this.tracksForLevels = {
       'intro': 'Ld29p1',
       'levelone': 'Ld29p1',
@@ -40,6 +47,22 @@ game.PlayScreen = me.ScreenObject.extend({
       if (me.audio.getCurrentTrack() !== track) {
         me.audio.stopTrack();
         me.audio.playTrack(track);
+      }
+
+      if(levelName === 'final') {
+        me.timer.setTimeout(function() {
+          game.playScreen.drawMessageTwo = true;
+          var mt = new game.MessageTimer('drawMessageTwo');
+          mt.setStartTime();
+          me.game.world.addChild(mt);
+        }, 1000);
+
+        me.timer.setTimeout(function() {
+          me.game.world.addChild(new game.EndSprite(), 1000);
+        }, 10000);
+      }
+      else {
+        game.playScreen.drawMessageOne = false;
       }
     });
   },
@@ -58,5 +81,24 @@ game.PlayScreen = me.ScreenObject.extend({
 
   resetHealth: function() {
     this.playerHealth = 3;
+  }
+});
+
+
+game.MessageTimer = Object.extend({
+  init: function(field, limit) {
+    this.timeLimit = limit || 5000;
+    this.field = field;
+  },
+
+  setStartTime: function() {
+    this.startTime = me.timer.getTime();
+  },
+
+  update: function(time) {
+    if(me.timer.getTime() - this.startTime > this.timeLimit) {
+      game.playScreen[this.field] = false;
+      me.game.world.removeChild(this);
+    }
   }
 });

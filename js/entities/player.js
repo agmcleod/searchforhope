@@ -24,6 +24,14 @@ game.Player = me.ObjectEntity.extend({
     if(this.damaged) {
       game.playScreen.uiFont.draw(context, this.health, this.pos.x - 10, this.pos.y - 10);
     }
+    if(game.playScreen.drawMessageOne) {
+      var image = me.loader.getImage('messageone');
+      context.drawImage(image, this.pos.x + this.width, this.pos.y - image.height);
+    }
+    else if(game.playScreen.drawMessageTwo) {
+      var image = me.loader.getImage('messagetwo');
+      context.drawImage(image, this.pos.x + this.width, this.pos.y - image.height);
+    }
   },
 
   handleInput: function() {
