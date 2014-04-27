@@ -2,7 +2,7 @@ game.Player = me.ObjectEntity.extend({
   init: function(x, y, settings) {
     this._super(me.ObjectEntity, "init", [x, y, settings]);
     this.setVel();
-    this.getShape().resize(28, 32);
+    this.getShape().resize(22, 32);
     this.getShape().translate(2, 0);
     this.renderable.addAnimation('dash', [0], 1);
     this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
@@ -67,7 +67,7 @@ game.Player = me.ObjectEntity.extend({
   },
 
   setVel: function() {
-    this.setVelocity(3, 20);
+    this.setVelocity(5, 21);
   },
 
   update: function(time) {
