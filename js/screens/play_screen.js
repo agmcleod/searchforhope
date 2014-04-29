@@ -32,19 +32,20 @@ game.PlayScreen = me.ScreenObject.extend({
     me.game.world.addChild(mt, 0);
 
     this.tracksForLevels = {
-      'intro': 'Ld29p1',
-      'levelone': 'Ld29p1',
-      'leveloneb': 'Ld29p1',
-      'leveltwo': 'Ld29p1',
-      'levelthree': 'Ld29p2',
-      'final': 'Ld29final'
+      'intro': 'ld29p1',
+      'levelone': 'ld29p1',
+      'leveloneb': 'ld29p1',
+      'leveltwo': 'ld29p1',
+      'levelthree': 'ld29p2',
+      'final': 'ld29final'
     };
 
     me.event.subscribe(me.event.LEVEL_LOADED, function (levelName) {
       // Checking bound keys
       var track = game.playScreen.tracksForLevels[levelName];
-
+      console.log(me.audio.getCurrentTrack() + ' !== ' + track);
       if (me.audio.getCurrentTrack() !== track) {
+        console.log('play');
         me.audio.stopTrack();
         me.audio.playTrack(track);
       }
