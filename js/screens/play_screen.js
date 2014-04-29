@@ -43,9 +43,7 @@ game.PlayScreen = me.ScreenObject.extend({
     me.event.subscribe(me.event.LEVEL_LOADED, function (levelName) {
       // Checking bound keys
       var track = game.playScreen.tracksForLevels[levelName];
-      console.log(me.audio.getCurrentTrack() + ' !== ' + track);
       if (me.audio.getCurrentTrack() !== track) {
-        console.log('play');
         me.audio.stopTrack();
         me.audio.playTrack(track);
       }
