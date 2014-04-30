@@ -47,11 +47,14 @@
     <property name="to" value="levelthree"/>
    </properties>
   </object>
-  <object name="me.LevelEntity" x="6" y="251" width="18" height="325">
+  <object name="game.PositionLevelEntity" x="6" y="251" width="18" height="325">
    <properties>
     <property name="duration" value="150"/>
     <property name="fade" value="#000000"/>
+    <property name="flip" value="true"/>
     <property name="to" value="levelone"/>
+    <property name="to_x" value="2496"/>
+    <property name="to_y" value="224"/>
    </properties>
   </object>
  </objectgroup>

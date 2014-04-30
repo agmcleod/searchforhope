@@ -9,7 +9,7 @@
   </tile>
  </tileset>
  <tileset firstgid="8" name="tiles" tilewidth="32" tileheight="32">
-  <image source="tiles.png" width="128" height="128"/>
+  <image source="tiles.png" width="128" height="160"/>
  </tileset>
  <imagelayer name="background" width="60" height="20">
   <image source="levelthreebg.png"/>
@@ -40,11 +40,14 @@
     <property name="to" value="final"/>
    </properties>
   </object>
-  <object name="me.LevelEntity" x="6" y="270" width="16" height="336">
+  <object name="game.PositionLevelEntity" x="6" y="270" width="16" height="336">
    <properties>
     <property name="duration" value="150"/>
     <property name="fade" value="#000000"/>
+    <property name="flip" value="true"/>
     <property name="to" value="leveltwo"/>
+    <property name="to_x" value="1856"/>
+    <property name="to_y" value="320"/>
    </properties>
   </object>
  </objectgroup>
