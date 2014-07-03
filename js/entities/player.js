@@ -4,15 +4,21 @@ game.Player = me.ObjectEntity.extend({
     this.setVel();
     this.getShape().resize(22, 32);
     this.getShape().translate(2, 0);
-    this.renderable.addAnimation('dash', [0], 1);
-    this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
-    this.renderable.setCurrentAnimation('run');
+    this.renderable = new me.AnimationSheet(0, 0, {
+      image: me.loader.getImage(settings.image),
+      spritewidth: settings.spritewidth,
+      spriteheight: settings.spriteheight
+    });
     me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
     this.health = game.playScreen.playerHealth;
     this.dashing = false;
     this.direction = new me.Vector2d();
     this.dashVel = new me.Vector2d(30, 20);
     this.setFriction(1.5, 0);
+
+    this.renderable.addAnimation('dash', [0], 1);
+    this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
+    this.renderable.setCurrentAnimation('run');
   },
 
   damagedCallback: function() {
@@ -80,7 +86,11 @@ game.Player = me.ObjectEntity.extend({
 
   update: function(time) {
     this.handleInput();
-
+    /* if (Object.keys(this.renderable.anim).length === 1) {
+      this.renderable.addAnimation('dash', [0], 1);
+      this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
+      this.renderable.setCurrentAnimation('run');
+    } */
     var res = me.game.world.collide(this);
 
     if (res) {
