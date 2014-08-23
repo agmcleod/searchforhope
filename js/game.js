@@ -8,7 +8,8 @@ var game = {
     if(me.device.getPixelRatio() > 1 && !me.device.isMobile) {
       scale = '2';
     }
-    if (!me.video.init("screen", 960, 640, true, scale)) {
+
+    if (!me.video.init("screen", me.video.CANVAS, 960, 640, true, scale)) {
       alert("Your browser does not support HTML5 canvas.");
       return;
     }

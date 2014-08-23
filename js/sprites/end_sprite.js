@@ -1,4 +1,4 @@
-game.EndSprite = me.SpriteObject.extend({
+game.EndSprite = me.Sprite.extend({
   init: function() {
     var image = me.loader.getImage('end');
     var x = me.game.viewport.width / 2 - image.width / 2;
@@ -15,6 +15,6 @@ game.EndSprite = me.SpriteObject.extend({
       this.alpha += 0.1;
       this.startTime = me.timer.getTime();
     }
-    me.SpriteObject.prototype.update.call(this, time);
+    this._super(me.Sprite, "update", [time]);
   }
 });

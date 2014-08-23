@@ -1,10 +1,10 @@
-game.BlackThing = me.ObjectEntity.extend({
+game.BlackThing = me.Entity.extend({
   init: function(x, y, settings) {
     settings['image'] = 'blackthing';
     settings['spritewidth'] = 64;
     settings['spriteheight'] = 64;
-    this._super(me.ObjectEntity, 'init', [x, y, settings]);
-    this.type = me.game.ENEMY_OBJECT;
+    this._super(me.Entity, 'init', [x, y, settings]);
+    this.body.collisionType = me.collision.types.ENEMY_OBJECT;
   },
 
   onCollision: function(res, obj) {
