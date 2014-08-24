@@ -39,6 +39,8 @@ game.Player = me.Entity.extend({
           else {
             this.renderable.flicker(300, this.damagedCallback.bind(this));
           }
+
+          response.b.onCollision();
         }
         break;
       case me.collision.types.WORLD_SHAPE:
