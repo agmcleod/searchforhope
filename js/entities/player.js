@@ -45,7 +45,14 @@ game.Player = me.Entity.extend({
         break;
       case me.collision.types.WORLD_SHAPE:
         this.dashing = false;
-        this.setDefaultAnimation();
+        if (!this.body.jumping) {
+          this.pos.sub(response.overlapV);
+          if (response.overlapN.y !== 0) {
+            this.body.vel.y = 0;
+          }
+          this.updateBounds();
+          this.canJump = true;
+        }
         break;
     };
   },
@@ -81,9 +88,14 @@ game.Player = me.Entity.extend({
       this.movementSetup();
     }
 
-    if (me.input.isKeyPressed('jump') && !this.body.jumping && !this.body.falling) {
+    if (this.body.vel.x === 0 && !this.renderable.isCurrentAnimation("dash")) {
+      this.renderable.setCurrentAnimation("dash");
+    }
+
+    if (me.input.isKeyPressed('jump') && this.canJump) {
       this.body.vel.y = -this.body.maxVel.y * me.timer.tick;
       this.body.jumping = true;
+      this.canJump = false;
     }
 
     if (me.input.isKeyPressed('dash') && !this.dashing && !this.body.falling) {
