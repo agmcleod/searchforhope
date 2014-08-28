@@ -60,9 +60,8 @@
   <object name="mapcollision" x="2208" y="512" width="352" height="32"/>
   <object name="mapcollision" x="608" y="512" width="64" height="32"/>
   <object name="mapcollision" x="640" y="448" width="64" height="32"/>
-  <object name="mapcollision" x="1153" y="322">
-   <polygon points="0,0 -2,95 127,96 125,32 95,30 93,-1"/>
-  </object>
+  <object name="mapcollision" x="1152" y="320" width="96" height="96"/>
+  <object name="mapcollision" x="1248" y="352" width="32" height="64"/>
  </objectgroup>
  <layer name="collision" width="80" height="20">
   <data encoding="base64">
