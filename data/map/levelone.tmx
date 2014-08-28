@@ -35,8 +35,18 @@
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
-  <object name="greenthing" x="1375" y="510" width="32" height="32"/>
-  <object name="greenthing" x="834" y="382" width="32" height="32"/>
+  <object name="greenthing" x="1375" y="510" width="32" height="32">
+   <properties>
+    <property name="endpatrol" value="1664"/>
+    <property name="startpatrol" value="1120"/>
+   </properties>
+  </object>
+  <object name="greenthing" x="834" y="382" width="32" height="32">
+   <properties>
+    <property name="endpatrol" value="864"/>
+    <property name="startpatrol" value="704"/>
+   </properties>
+  </object>
   <object name="me.LevelEntity" x="2530" y="99" width="28" height="162">
    <properties>
     <property name="duration" value="150"/>
