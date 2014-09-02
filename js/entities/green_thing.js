@@ -13,6 +13,9 @@ game.GreenThing = me.Entity.extend({
     if (this.direction > 0) {
       this.flipX(true);
     }
+
+    this.renderable.addAnimation("walk", [0,1,2,3,2,1], 25);
+    this.renderable.setCurrentAnimation("walk");
   },
 
   collideHandler: function (response) {
