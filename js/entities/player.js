@@ -46,11 +46,14 @@ game.Player = me.Entity.extend({
       case me.collision.types.WORLD_SHAPE:
         this.dashing = false;
         this.pos.sub(response.overlapV);
-        if (!this.body.jumping || (this.body.vel.y < 0 && response.overlapN.y === 0)) {
-          this.body.vel.y = 0;
-          this.updateBounds();
+        if (response.overlapN.y !== 0) {
           this.canJump = true;
         }
+        else {
+          this.body.vel.y = 0;
+        }
+        
+        this.updateBounds();
         break;
     };
   },
