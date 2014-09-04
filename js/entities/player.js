@@ -45,8 +45,8 @@ game.Player = me.Entity.extend({
         break;
       case me.collision.types.WORLD_SHAPE:
         this.dashing = false;
+        this.pos.sub(response.overlapV);
         if (!this.body.jumping) {
-          this.pos.sub(response.overlapV);
           if (response.overlapN.y !== 0) {
             this.body.vel.y = 0;
           }
