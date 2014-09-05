@@ -136,10 +136,9 @@ game.Player = me.Entity.extend({
 
     var res = me.game.world.collide(this);
 
+    this.body.update();
     me.collision.check(this, true, this.collideHandler.bind(this), true);
 
-    this.body.update();
-    
     if (this.body.vel.x !== 0 || this.body.vel.y !== 0) {
       this._super(me.Entity, 'update', [time]);
     }
