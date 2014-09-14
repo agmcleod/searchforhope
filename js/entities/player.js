@@ -43,18 +43,6 @@ game.Player = me.Entity.extend({
           response.b.onCollision();
         }
         break;
-      case me.collision.types.WORLD_SHAPE:
-        this.dashing = false;
-        this.pos.sub(response.overlapV);
-        if (response.overlapN.y !== 0) {
-          this.canJump = true;
-        }
-        else {
-          this.body.vel.y = 0;
-        }
-        
-        this.updateBounds();
-        break;
     };
   },
 
@@ -93,10 +81,15 @@ game.Player = me.Entity.extend({
       this.renderable.setCurrentAnimation("dash");
     }
 
-    if (me.input.isKeyPressed('jump') && this.canJump) {
-      this.body.vel.y = -this.body.maxVel.y * me.timer.tick;
-      this.body.jumping = true;
-      this.canJump = false;
+    if (me.input.isKeyPressed('jump')) {
+      this.jumping = true;
+
+      this.jumpState = (this.body.vel.y === 0)?1:this.jumpState;
+
+      if (this.jumpState <= 1) {
+        this.body.vel.y -= (this.body.maxVel.y * this.jumpState++) * me.timer.tick;
+        me.audio.play("jump", false);
+      }
     }
 
     if (me.input.isKeyPressed('dash') && !this.dashing && !this.body.falling) {
@@ -133,8 +126,6 @@ game.Player = me.Entity.extend({
       this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
       this.renderable.setCurrentAnimation('run');
     } */
-
-    var res = me.game.world.collide(this);
 
     this.body.update();
     me.collision.check(this, true, this.collideHandler.bind(this), true);

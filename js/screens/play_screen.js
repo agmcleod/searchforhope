@@ -20,7 +20,6 @@ game.PlayScreen = me.ScreenObject.extend({
     me.pool.register('greenthing', game.GreenThing, true);
     me.pool.register('redthing', game.RedThing, true);
     me.pool.register('blackthing', game.BlackThing, true);
-    me.pool.register('mapcollision', game.MapCollision);
     me.pool.register('game.PositionLevelEntity', game.PositionLevelEntity, false);
     this.resetHealth();
     me.levelDirector.loadLevel('intro');

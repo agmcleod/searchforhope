@@ -18,12 +18,8 @@ game.GreenThing = me.Entity.extend({
     this.renderable.setCurrentAnimation("walk");
   },
 
-  collideHandler: function (response) {
-    switch (response.b.body.collisionType) {
-      case me.collision.types.WORLD_SHAPE:
-        this.pos.sub(response.overlapV);
-        break;
-    }
+  collideHandler: function () {
+
   },
 
   onCollision: function(res, obj) {
