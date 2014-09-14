@@ -53,7 +53,7 @@ game.Player = me.Entity.extend({
   draw: function(context) {
     this._super(me.Entity, 'draw', [context]);
     if(this.damaged) {
-      game.playScreen.uiFont.draw(context, this.health, this.pos.x - 10, this.pos.y - 10);
+      game.playScreen.uiFont.draw(context.getContext(), this.health, this.pos.x - 10, this.pos.y - 10);
     }
     if(game.playScreen.drawMessageOne) {
       var image = me.loader.getImage('messageone');
