@@ -108,7 +108,11 @@ game.Player = me.Entity.extend({
 
           other.onCollision();
         }
+
+        return false;
         break;
+      default:
+        return false;
     };
   },
 
