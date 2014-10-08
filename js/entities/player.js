@@ -7,6 +7,7 @@ game.Player = me.Entity.extend({
     ]);
     this.setVel();
     this.body.setFriction(1.5, 0);
+    this.body.collisionType = me.collision.types.PLAYER_OBJECT;
 
     this.renderable = new me.AnimationSheet(0, 0, {
       image: me.loader.getImage(settings.image),

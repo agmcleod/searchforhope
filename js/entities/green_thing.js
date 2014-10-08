@@ -18,19 +18,16 @@ game.GreenThing = me.Entity.extend({
     this.renderable.setCurrentAnimation("walk");
   },
 
-  collideHandler: function () {
-
-  },
-
   onCollision: function(res, obj) {
-    game.enemy.onCollision(this, res, obj);
+    return game.enemy.onCollision(this, res, obj);
   },
 
   update: function(time) {
     this._super(me.Entity, 'update', [time]);
     game.enemy.patrol(this);
-    me.collision.check(this, true, this.collideHandler.bind(this), true);
     this.body.update();
+    me.collision.check(this);
+    
     return true;
   }
 });

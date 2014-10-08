@@ -10,11 +10,12 @@ game.RedThing = me.Entity.extend({
   },
 
   onCollision: function(res, obj) {
-    game.enemy.onCollision(this, res, obj);
+    return game.enemy.onCollision(this, res, obj);
   },
 
   update: function(time) {
     this._super(me.Entity, 'update', [time]);
+    this.body.update();
     return true;
   }
 });
