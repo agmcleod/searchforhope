@@ -2,7 +2,7 @@ game.PlayScreen = me.ScreenObject.extend({
   bindKeys: function() {
     me.input.bindKey(me.input.KEY.A, 'left');
     me.input.bindKey(me.input.KEY.D, 'right');
-    me.input.bindKey(me.input.KEY.SPACE, 'jump');
+    me.input.bindKey(me.input.KEY.SPACE, 'jump', true);
     me.input.bindKey(me.input.KEY.E, 'dash');
     me.input.bindPointer(me.input.KEY.E);
   },
