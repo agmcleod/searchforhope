@@ -8,15 +8,17 @@ game.BlackThing = me.Entity.extend({
 
     this.renderable.addAnimation("idle", [0], 1);
     this.renderable.addAnimation("warp", [1,2,3,2,1], 25);
+    this.renderable.setCurrentAnimation("idle");
   },
 
   onCollision: function(res, obj) {
-    game.enemy.onCollision(this, res, obj);
+    return game.enemy.onCollision(this, res, obj);
   },
 
   update: function(time) {
-    this._super(me.ObjectEntity, 'update', [time]);
+    this._super(me.Entity, 'update', [time]);
     this.body.update();
+    me.collision.check(this);
     return true;
   }
 });

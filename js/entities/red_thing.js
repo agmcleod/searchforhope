@@ -15,7 +15,6 @@ game.RedThing = me.Entity.extend({
 
   update: function(time) {
     this._super(me.Entity, 'update', [time]);
-    this.body.update();
     return true;
   }
 });

@@ -16,7 +16,7 @@ var game = {
     // add "#debug" to the URL to enable the debug Panel
     if (document.location.hash === "#debug") {
       window.onReady(function () {
-        me.plugin.register.defer(this, debugPanel, "debug", me.input.KEY.V);
+        me.plugin.register.defer(this, me.debug.Panel, "debug", me.input.KEY.V);
         me.debug.renderQuadTree = true;
       });
     }

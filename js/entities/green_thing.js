@@ -11,7 +11,7 @@ game.GreenThing = me.Entity.extend({
     this.body.collisionType = me.collision.types.ENEMY_OBJECT;
 
     if (this.direction > 0) {
-      this.flipX(true);
+      this.renderable.flipX(true);
     }
 
     this.renderable.addAnimation("walk", [0,1,2,3,2,1], 25);
