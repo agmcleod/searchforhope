@@ -24,7 +24,7 @@ game.GreenThing = me.Entity.extend({
 
   update: function(time) {
     this._super(me.Entity, 'update', [time]);
-    game.enemy.patrol(this);
+    game.patrolBehaviour.execute(this);
     this.body.update();
     me.collision.check(this);
     
