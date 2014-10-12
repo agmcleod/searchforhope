@@ -12,6 +12,7 @@ game.RedThing = me.Entity.extend({
     this.renderable.setCurrentAnimation("idle");
 
     this.maxChase = 250;
+    this.stopDiff = 0;
   },
 
   onCollision: function(res, obj) {

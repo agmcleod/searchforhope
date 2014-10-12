@@ -2,7 +2,7 @@ game.chaseBehaviour = {
   execute: function (entity, target) {
     var diff = Math.abs(entity.pos.x - target.x);
     var accelx = entity.body.accel.x * me.timer.tick;
-    if (diff > entity.maxChase || diff <= accelx) {
+    if (diff > entity.maxChase || diff <= accelx + entity.stopDiff) {
       return;
     }
     if (entity.pos.x > target.x) {
