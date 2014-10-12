@@ -42,6 +42,9 @@ game.PlayScreen = me.ScreenObject.extend({
     };
 
     me.event.subscribe(me.event.LEVEL_LOADED, function (levelName) {
+      // rebind player reference
+      game.player = me.game.world.getChildByName("player")[0];
+
       // Checking bound keys
       var track = game.playScreen.tracksForLevels[levelName];
       if (me.audio.getCurrentTrack() !== track) {

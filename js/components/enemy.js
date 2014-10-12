@@ -6,6 +6,9 @@ game.enemy = {
       });
       return false;
     }
+    else if (obj.body.collisionType === me.collision.types.ENEMY_OBJECT) {
+      return false;
+    }
     else {
       return true;
     }
