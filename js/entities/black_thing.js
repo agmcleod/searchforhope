@@ -8,10 +8,13 @@ game.BlackThing = me.Entity.extend({
     this.body.setVelocity(4.0, 20);
     this.body.setFriction(0.5, 0);
     this.renderable.addAnimation("idle", [0], 1);
-    this.renderable.addAnimation("warp", [1,2,3,2,1], 25);
+    this.renderable.addAnimation("warp", [1,2,3], 20);
     this.renderable.setCurrentAnimation("idle");
     this.maxChase = 160;
-    this.stopDiff = 40;
+    this.stopDiff = 50;
+
+    this.warpCooldown = 750;
+    this.warpTime = me.timer.getTime();
   },
 
   onCollision: function(res, obj) {
@@ -20,16 +23,24 @@ game.BlackThing = me.Entity.extend({
 
   update: function(time) {
     this._super(me.Entity, 'update', [time]);
-    this.body.update();
-    me.collision.check(this);
-    return true;
-  },
-
-  warp: function () {
-    if (!this.renderable.isCurrentAnimation("warp")) {
-      this.renderable.setCurrentAnimation("warp");
+    var t = me.timer.getTime();
+    if (t - this.warpTime > this.warpCooldown && game.chaseBehaviour.execute(this, game.player.pos)) {
+      if (!this.renderable.isCurrentAnimation("warp")) {
+        this.renderable.setCurrentAnimation("warp");
+      }
+    }
+    else {
+      if (!this.renderable.isCurrentAnimation("idle")) {
+        this.warpTime = t;
+        this.renderable.setCurrentAnimation("idle");
+      }
     }
 
-    game.chaseBehaviour.execute(this, game.player.pos);
+    if (this.dead !== true) {
+      this.body.update();
+    }
+
+    me.collision.check(this);
+    return true;
   }
 });

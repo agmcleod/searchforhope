@@ -22,7 +22,9 @@ game.RedThing = me.Entity.extend({
   update: function(time) {
     this._super(me.Entity, 'update', [time]);
     game.chaseBehaviour.execute(this, game.player.pos);
-    this.body.update();
+    if (this.dead !== true) {
+      this.body.update();
+    }
 
     if (this.body.vel.x === 0 && !this.renderable.isCurrentAnimation("idle")) {
       this.renderable.setCurrentAnimation("idle");

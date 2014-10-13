@@ -16,21 +16,10 @@ game.PlayScreen = me.ScreenObject.extend({
   onResetEvent: function() {
     this.bindKeys();
     this.uiFont = new me.Font('Arial', '10px', '#ff0000');
-    me.pool.register('player', game.Player);
-    me.pool.register('greenthing', game.GreenThing, true);
-    me.pool.register('redthing', game.RedThing, true);
-    me.pool.register('blackthing', game.BlackThing, true);
-    me.pool.register('game.PositionLevelEntity', game.PositionLevelEntity, false);
+
+    this.registerEntities();
+
     this.resetHealth();
-    me.levelDirector.loadLevel('intro');
-    me.audio.playTrack('Ld29p1');
-
-    this.drawMessageOne = true;
-    this.drawMessageTwo = false;
-
-    var mt = new game.MessageTimer('drawMessageOne');
-    mt.setStartTime();
-    me.game.world.addChild(mt, 0);
 
     this.tracksForLevels = {
       'intro': 'ld29p1',
@@ -68,6 +57,17 @@ game.PlayScreen = me.ScreenObject.extend({
         game.playScreen.drawMessageOne = false;
       }
     });
+
+    var levelString = 'levelthree';
+
+    me.levelDirector.loadLevel(levelString);
+
+    this.drawMessageOne = levelString === "intro";
+    this.drawMessageTwo = false;
+
+    var mt = new game.MessageTimer('drawMessageOne');
+    mt.setStartTime();
+    me.game.world.addChild(mt, 0);
   },
 
 
@@ -80,6 +80,14 @@ game.PlayScreen = me.ScreenObject.extend({
     me.input.unbindKey(me.input.KEY.E);
     me.input.unbindKey(me.input.KEY.SPACE);
     me.input.unbindPointer();
+  },
+
+  registerEntities: function () {
+    me.pool.register('player', game.Player);
+    me.pool.register('greenthing', game.GreenThing, true);
+    me.pool.register('redthing', game.RedThing, true);
+    me.pool.register('blackthing', game.BlackThing, true);
+    me.pool.register('game.PositionLevelEntity', game.PositionLevelEntity, false);
   },
 
   resetHealth: function() {

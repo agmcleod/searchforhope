@@ -1,6 +1,7 @@
 game.enemy = {
   onCollision: function (enemy, res, obj) {
     if (obj.body.collisionType === me.collision.types.PLAYER_OBJECT && enemy.alive) {
+      enemy.dead = true;
       enemy.renderable.flicker(300, function() {
         me.game.world.removeChild(enemy);
       });
