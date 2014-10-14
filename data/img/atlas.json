@@ -1,0 +1,68 @@
+{"frames": [
+
+{
+	"filename": "blackthing.png",
+	"frame": {"x":2,"y":829,"w":256,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":64},
+	"sourceSize": {"w":256,"h":64}
+},
+{
+	"filename": "end.png",
+	"frame": {"x":2,"y":2,"w":960,"h":640},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":960,"h":640},
+	"sourceSize": {"w":960,"h":640}
+},
+{
+	"filename": "greenthing.png",
+	"frame": {"x":154,"y":765,"w":128,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
+	"sourceSize": {"w":128,"h":32}
+},
+{
+	"filename": "messageone.png",
+	"frame": {"x":132,"y":644,"w":150,"h":85},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
+	"sourceSize": {"w":150,"h":85}
+},
+{
+	"filename": "messagetwo.png",
+	"frame": {"x":2,"y":742,"w":150,"h":85},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
+	"sourceSize": {"w":150,"h":85}
+},
+{
+	"filename": "player.png",
+	"frame": {"x":2,"y":644,"w":128,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":96},
+	"sourceSize": {"w":128,"h":96}
+},
+{
+	"filename": "redthing.png",
+	"frame": {"x":154,"y":731,"w":128,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
+	"sourceSize": {"w":128,"h":32}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "atlas.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:f245f5e61e0ff3b8ef9888d82e4760bb:bb7fee2d20e94c4d1e5b5e46e956b617:cbce6b53f0f49e0bf15173c25c41f876$"
+}
+}

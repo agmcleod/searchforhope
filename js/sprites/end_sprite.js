@@ -1,10 +1,11 @@
 game.EndSprite = me.Sprite.extend({
   init: function() {
-    var image = me.loader.getImage('end');
-    var x = me.game.viewport.width / 2 - image.width / 2;
-    var y = me.game.viewport.height / 2 - image.height / 2;
+    var region = game.atlas.getRegion('end.png');
+    var x = me.game.viewport.width / 2 - region.width / 2;
+    var y = me.game.viewport.height / 2 - region.height / 2;
 
-    this._super(me.SpriteObject, 'init', [x, y, image]);
+    this._super(me.SpriteObject, 'init', [x, y, game.atlas.getTexture(), region.width, region.height]);
+    this.offset.setV(region.offset);
     this.startTime = me.timer.getTime();
     this.alpha = 0;
     this.floating = true;

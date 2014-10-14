@@ -1,12 +1,19 @@
 game.RedThing = me.Entity.extend({
   init: function(x, y, settings) {
-    settings['image'] = 'redthing';
-    settings['spritewidth'] = 32;
-    settings['spriteheight'] = 32;
+    settings['width'] = 32;
+    settings['height'] = 32;
     this._super(me.Entity, 'init', [x, y, settings]);
     this.body.collisionType = me.collision.types.ENEMY_OBJECT;
     this.body.setVelocity(2.0, 20);
     this.body.setFriction(0.5, 0);
+
+    this.renderable = new me.AnimationSheet(0, 0, {
+      image: game.atlas.getTexture(),
+      spritewidth: this.width,
+      spriteheight: this.height,
+      region: game.atlas.getRegion("red_thing.png")
+    });
+
     this.renderable.addAnimation("move", [0,1,2,3,2,1], 40);
     this.renderable.addAnimation("idle", [0], 40);
     this.renderable.setCurrentAnimation("idle");

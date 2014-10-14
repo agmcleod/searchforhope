@@ -1,9 +1,8 @@
 game.resources = [
-  { name: 'blackthing', type: 'image', src: 'data/img/blackthing.png' },
-  { name: 'end', type: 'image', src: 'data/img/end.png' },
+  { name: 'atlas', type: 'image', src: 'data/img/atlas.png' },
+  { name: 'atlas', type: 'json', src: 'data/img/atlas.json' },
   { name: 'final', type: 'tmx', src: 'data/map/final.tmx' },
   { name: 'finalbg', type: 'image', src: 'data/map/finalbg.png' },
-  { name: 'greenthing', type: 'image', src: 'data/img/greenthing.png' },
   { name: 'introbackground', type: 'image', src: 'data/map/introbackground.png' },
   { name: 'intro', type: 'tmx', src: 'data/map/intro.tmx' },
   { name: 'ld29final', type: 'audio', src: 'data/sfx/' },
@@ -16,10 +15,6 @@ game.resources = [
   { name: 'levelthreebg', type: 'image', src: 'data/map/levelthreebg.png' },
   { name: 'leveltwo', type: 'tmx', src: 'data/map/leveltwo.tmx' },
   { name: 'leveltwobg', type: 'image', src: 'data/map/leveltwobg.png' },
-  { name: 'messageone', type: 'image', src: 'data/img/messageone.png' },
-  { name: 'messagetwo', type: 'image', src: 'data/img/messagetwo.png' },
   { name: 'metatiles32x32', type: 'image', src: 'data/map/metatiles32x32.png' },
-  { name: 'player', type: 'image', src: 'data/img/player.png' },
-  { name: 'redthing', type: 'image', src: 'data/img/redthing.png' },
   { name: 'tiles', type: 'image', src: 'data/map/tiles.png' }
 ];

@@ -1,12 +1,19 @@
 game.BlackThing = me.Entity.extend({
   init: function(x, y, settings) {
-    settings['image'] = 'blackthing';
-    settings['spritewidth'] = 64;
-    settings['spriteheight'] = 64;
+    settings['width'] = 64;
+    settings['height'] = 64;
     this._super(me.Entity, 'init', [x, y, settings]);
     this.body.collisionType = me.collision.types.ENEMY_OBJECT;
     this.body.setVelocity(4.0, 20);
     this.body.setFriction(0.5, 0);
+
+    this.renderable = new me.AnimationSheet(0, 0, {
+      image: game.atlas.getTexture(),
+      spritewidth: this.width,
+      spriteheight: this.height,
+      region: game.atlas.getRegion("black_thing.png")
+    });
+
     this.renderable.addAnimation("idle", [0], 1);
     this.renderable.addAnimation("warp", [1,2,3], 20);
     this.renderable.setCurrentAnimation("idle");

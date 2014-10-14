@@ -28,13 +28,7 @@
   </data>
  </layer>
  <objectgroup name="entities" width="80" height="20">
-  <object name="player" x="98" y="2" width="32" height="32">
-   <properties>
-    <property name="image" value="player"/>
-    <property name="spriteheight" value="32"/>
-    <property name="spritewidth" value="32"/>
-   </properties>
-  </object>
+  <object name="player" x="98" y="2" width="32" height="32"/>
   <object name="greenthing" x="1376" y="512" width="32" height="32">
    <properties>
     <property name="endpatrol" value="1400"/>

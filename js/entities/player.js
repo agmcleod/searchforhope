@@ -1,16 +1,20 @@
 game.Player = me.Entity.extend({
   init: function(x, y, settings) {
+    settings.width = 32;
+    settings.height = 32;
     this._super(me.Entity, "init", [x, y, settings]);
     this.body.setShape(2, 0, 24, 32);
     this.body.setVelocity(5, 21);
     this.body.setFriction(1.5, 0);
     this.body.collisionType = me.collision.types.PLAYER_OBJECT;
-
+    console.log(game.atlas.getRegion("player.png"));
     this.renderable = new me.AnimationSheet(0, 0, {
-      image: me.loader.getImage(settings.image),
-      spritewidth: settings.spritewidth,
-      spriteheight: settings.spriteheight
+      image: game.atlas.getTexture(),
+      spritewidth: this.width,
+      spriteheight: this.height,
+      region: game.atlas.getRegion("player.png")
     });
+
     me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
     this.health = game.playScreen.playerHealth;
     this.dashing = false;
