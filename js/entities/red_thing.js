@@ -11,7 +11,7 @@ game.RedThing = me.Entity.extend({
       image: game.atlas.getTexture(),
       spritewidth: this.width,
       spriteheight: this.height,
-      region: game.atlas.getRegion("red_thing.png")
+      region: game.atlas.getRegion("redthing.png")
     });
 
     this.renderable.addAnimation("move", [0,1,2,3,2,1], 40);

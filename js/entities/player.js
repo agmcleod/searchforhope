@@ -7,7 +7,7 @@ game.Player = me.Entity.extend({
     this.body.setVelocity(5, 21);
     this.body.setFriction(1.5, 0);
     this.body.collisionType = me.collision.types.PLAYER_OBJECT;
-    console.log(game.atlas.getRegion("player.png"));
+
     this.renderable = new me.AnimationSheet(0, 0, {
       image: game.atlas.getTexture(),
       spritewidth: this.width,
@@ -24,24 +24,33 @@ game.Player = me.Entity.extend({
     this.renderable.addAnimation('dash', [0], 1);
     this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
     this.renderable.setCurrentAnimation('run');
+
+    var messageOneRegion = game.atlas.getRegion("messageone.png");
+    this.messageOneSprite = new me.Sprite(this.pos.x, this.pos.y, game.atlas.getTexture(), messageOneRegion.width, messageOneRegion.height);
+    this.messageOneSprite.offset.setV(messageOneRegion.offset);
+
+    var messageTwoRegion = game.atlas.getRegion("messagetwo.png");
+    this.messageTwoSprite = new me.Sprite(this.pos.x, this.pos.y, game.atlas.getTexture(), messageTwoRegion.width, messageTwoRegion.height);
+    this.messageTwoSprite.offset.setV(messageTwoRegion.offset);
   },
 
   damagedCallback: function() {
     this.damaged = false;
   },
 
-  draw: function(context) {
-    this._super(me.Entity, 'draw', [context]);
+  draw: function(renderer) {
+    this._super(me.Entity, 'draw', [renderer]);
     if(this.damaged) {
-      game.playScreen.uiFont.draw(context.getContext(), this.health, this.pos.x - 10, this.pos.y - 10);
+      game.playScreen.uiFont.draw(renderer.getContext(), this.health, this.pos.x - 10, this.pos.y - 10);
     }
+
     if(game.playScreen.drawMessageOne) {
-      var image = me.loader.getImage('messageone');
-      context.drawImage(image, this.pos.x + this.width, this.pos.y - image.height);
+      this.messageOneSprite.pos.set(this.pos.x + this.width, this.pos.y - this.messageOneSprite.height);
+      this.messageOneSprite.draw(renderer);
     }
     else if(game.playScreen.drawMessageTwo) {
-      var image = me.loader.getImage('messagetwo');
-      context.drawImage(image, this.pos.x + this.width, this.pos.y - image.height);
+      this.messageTwoSprite.pos.set(this.pos.x + this.width, this.pos.y - this.messageTwoSprite.height);
+      this.messageTwoSprite.draw(renderer);
     }
   },
 

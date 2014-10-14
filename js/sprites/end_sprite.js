@@ -4,7 +4,7 @@ game.EndSprite = me.Sprite.extend({
     var x = me.game.viewport.width / 2 - region.width / 2;
     var y = me.game.viewport.height / 2 - region.height / 2;
 
-    this._super(me.SpriteObject, 'init', [x, y, game.atlas.getTexture(), region.width, region.height]);
+    this._super(me.Sprite, 'init', [x, y, game.atlas.getTexture(), region.width, region.height]);
     this.offset.setV(region.offset);
     this.startTime = me.timer.getTime();
     this.alpha = 0;

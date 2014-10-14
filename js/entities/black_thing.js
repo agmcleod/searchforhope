@@ -11,7 +11,7 @@ game.BlackThing = me.Entity.extend({
       image: game.atlas.getTexture(),
       spritewidth: this.width,
       spriteheight: this.height,
-      region: game.atlas.getRegion("black_thing.png")
+      region: game.atlas.getRegion("blackthing.png")
     });
 
     this.renderable.addAnimation("idle", [0], 1);
