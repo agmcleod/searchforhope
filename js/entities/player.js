@@ -19,7 +19,7 @@ game.Player = me.Entity.extend({
     this.health = game.playScreen.playerHealth;
     this.dashing = false;
     this.direction = new me.Vector2d();
-    this.dashVel = new me.Vector2d(30, 20);
+    this.dashVel = new me.Vector2d(5, 20);
 
     this.renderable.addAnimation('dash', [0], 1);
     this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
@@ -80,16 +80,22 @@ game.Player = me.Entity.extend({
       }
     }
 
-    /* if (me.input.isKeyPressed('dash') && !this.dashing && !this.body.falling) {
-      game.dash.dash(this);
-      this.body.setMaxVelocity(100, 50);
+    if (me.input.isKeyPressed('dash') && !this.dashing && !this.body.jumping) {
+      this.dashing = true;
+      var mousePos = me.game.viewport.localToWorld(me.input.mouse.pos.x, me.input.mouse.pos.y);
+      this.direction.set((mousePos.x - this.pos.x), (mousePos.y - this.pos.y));
+      this.direction.normalize();
+      this.direction.scaleV(this.dashVel);
+      this.renderable.setCurrentAnimation('dash');
+      // this.body.vel.add(this.direction);
+      this.body.vel.x += this.direction.x;
       if(this.direction.x < 0) {
         this.flipX(true);
       }
       else {
         this.flipX(false);
       }
-    } */
+    }
   },
 
   movementSetup: function() {
@@ -114,7 +120,6 @@ game.Player = me.Entity.extend({
           else {
             this.renderable.flicker(300, this.damagedCallback.bind(this));
           }
-
         }
 
         return false;
@@ -132,11 +137,6 @@ game.Player = me.Entity.extend({
 
   update: function(time) {
     this.handleInput();
-    /* if (Object.keys(this.renderable.anim).length === 1) {
-      this.renderable.addAnimation('dash', [0], 1);
-      this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
-      this.renderable.setCurrentAnimation('run');
-    } */
 
     this.body.update();
     me.collision.check(this);
