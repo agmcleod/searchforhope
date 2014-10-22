@@ -151,6 +151,7 @@ game.Player = me.Entity.extend({
     }
     else if(this.dashing) {
       this.dashing = false;
+      this.setMovementVelocity();
     }
     return true;
   }
