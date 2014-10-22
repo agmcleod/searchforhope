@@ -87,13 +87,12 @@ game.Player = me.Entity.extend({
       this.direction.normalize();
       this.direction.scaleV(this.dashVel);
       this.renderable.setCurrentAnimation('dash');
-      // this.body.vel.add(this.direction);
-      this.body.vel.x += this.direction.x;
+      this.body.vel.add(this.direction);
       if(this.direction.x < 0) {
-        this.flipX(true);
+        this.renderable.flipX(true);
       }
       else {
-        this.flipX(false);
+        this.renderable.flipX(false);
       }
     }
   },
