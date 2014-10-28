@@ -3,7 +3,11 @@ game.Player = me.Entity.extend({
     settings.width = 32;
     settings.height = 32;
     this._super(me.Entity, "init", [x, y, settings]);
-    this.body.setShape(2, 0, 24, 32);
+    // this.body.setShape(2, 0, 24, 32);
+    var shape = this.body.getShape(0);
+    shape.translate(2, 0);
+    shape.scale(24 / 32, 1);
+    this.body.updateBounds();
     this.setMovementVelocity();
     this.body.setFriction(1.5, 0);
     this.body.collisionType = me.collision.types.PLAYER_OBJECT;
