@@ -3,7 +3,6 @@ game.Player = me.Entity.extend({
     settings.width = 32;
     settings.height = 32;
     this._super(me.Entity, "init", [x, y, settings]);
-    // this.body.setShape(2, 0, 24, 32);
     var shape = this.body.getShape(0);
     shape.translate(2, 0);
     shape.scale(24 / 32, 1);
@@ -58,15 +57,17 @@ game.Player = me.Entity.extend({
   },
 
   handleInput: function () {
-    if (me.input.isKeyPressed('left')) {
-      this.renderable.flipX(true);
-      this.body.vel.x -= this.body.accel.x * me.timer.tick;
-      this.movementSetup();
-    }
-    else if (me.input.isKeyPressed('right')) {
-      this.renderable.flipX(false);
-      this.body.vel.x += this.body.accel.x * me.timer.tick;
-      this.movementSetup();
+    if (!this.dashing) {
+      if (me.input.isKeyPressed('left')) {
+        this.renderable.flipX(true);
+        this.body.vel.x -= this.body.accel.x * me.timer.tick;
+        this.movementSetup();
+      }
+      else if (me.input.isKeyPressed('right')) {
+        this.renderable.flipX(false);
+        this.body.vel.x += this.body.accel.x * me.timer.tick;
+        this.movementSetup();
+      }
     }
 
     if (this.body.vel.x === 0 && !this.renderable.isCurrentAnimation("dash")) {
