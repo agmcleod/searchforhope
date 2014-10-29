@@ -11,6 +11,7 @@ game.resources = [
   { name: 'levelone', type: 'tmx', src: 'data/map/levelone.tmx' },
   { name: 'leveloneb', type: 'tmx', src: 'data/map/leveloneb.tmx' },
   { name: 'levelonebg', type: 'image', src: 'data/map/levelonebg.png' },
+  { name: 'levelonec', type: 'tmx', src: 'data/map/levelonec.tmx' },
   { name: 'levelthree', type: 'tmx', src: 'data/map/levelthree.tmx' },
   { name: 'levelthreebg', type: 'image', src: 'data/map/levelthreebg.png' },
   { name: 'leveltwo', type: 'tmx', src: 'data/map/leveltwo.tmx' },
