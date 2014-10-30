@@ -4,7 +4,7 @@ game.GreenThing = me.Entity.extend({
     settings.height = 32;
     this.startpatrol = settings['startpatrol'];
     this.endpatrol = settings['endpatrol'];
-    this.direction = (!! Math.round(Math.random() * 1)) ? -1 : 1;
+    this.direction = -1; // (!! Math.round(Math.random() * 1)) ? -1 : 1
     this._super(me.Entity, 'init', [x, y, settings]);
 
     this.body.setVelocity(3, 0);
@@ -23,6 +23,7 @@ game.GreenThing = me.Entity.extend({
 
     this.renderable.addAnimation("walk", [0,1,2,3,2,1], 25);
     this.renderable.setCurrentAnimation("walk");
+    this.dead = false;
   },
 
   onCollision: function(res, obj) {

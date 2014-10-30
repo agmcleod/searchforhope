@@ -1,10 +1,10 @@
 game.patrolBehaviour = {
   execute: function (entity) {
-    if (entity.pos.x >= entity.endpatrol) {
+    if (entity.pos.x >= entity.endpatrol && entity.direction === 1) {
       entity.direction = -1;
       entity.renderable.flipX(false);
     }
-    else if (entity.pos.x <= entity.startpatrol) {
+    else if (entity.pos.x <= entity.startpatrol && entity.direction === -1) {
       entity.direction = 1;
       entity.renderable.flipX(true);
     }

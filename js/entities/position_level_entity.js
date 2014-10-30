@@ -10,6 +10,7 @@ game.PositionLevelEntity = me.LevelEntity.extend({
     if(this.settings.to_x) {
       var player = me.game.world.getChildByName('player')[0];
       player.pos.set(this.settings.to_x, this.settings.to_y);
+      player.body.update();
       if(this.settings.flip !== null || typeof this.settings.flip !== 'undefined') {
         player.renderable.flipX(this.settings.flip);
       }
