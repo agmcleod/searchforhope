@@ -7,7 +7,7 @@ game.GreenThing = me.Entity.extend({
     this.direction = -1; // (!! Math.round(Math.random() * 1)) ? -1 : 1
     this._super(me.Entity, 'init', [x, y, settings]);
 
-    this.body.setVelocity(3, 0);
+    this.body.setVelocity(3, 10);
     this.body.collisionType = me.collision.types.ENEMY_OBJECT;
 
     this.renderable = new me.AnimationSheet(0, 0, {
