@@ -26,6 +26,7 @@ game.PlayScreen = me.ScreenObject.extend({
       'levelone': 'ld29p1',
       'leveloneb': 'ld29p1',
       'levelonec': 'ld29p1',
+      'surfacetwo': 'ld29p1',
       'leveltwo': 'ld29p1',
       'levelthree': 'ld29p2',
       'final': 'ld29final'
