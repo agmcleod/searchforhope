@@ -25,9 +25,9 @@
   </object>
   <object name="me.LevelEntity" x="1217" y="3" width="152" height="26">
    <properties>
-    <property name="to" value="surfacetwo"/>
     <property name="duration" value="150"/>
     <property name="fade" value="#000000"/>
+    <property name="to" value="surfacetwo"/>
    </properties>
   </object>
  </objectgroup>

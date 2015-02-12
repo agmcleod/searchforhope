@@ -126,6 +126,9 @@ game.Player = me.Entity.extend({
 
         return false;
         break;
+      case me.collision.types.ACTION_OBJECT:
+        return false;
+        break;
       default:
         return true;
 

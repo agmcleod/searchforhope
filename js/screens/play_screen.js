@@ -60,7 +60,7 @@ game.PlayScreen = me.ScreenObject.extend({
       }
     });
 
-    var levelString = 'intro';
+    var levelString = 'leveloneb';
 
     me.levelDirector.loadLevel(levelString);
 
