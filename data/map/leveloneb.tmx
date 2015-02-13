@@ -47,6 +47,7 @@
     <property name="to" value="leveltwo"/>
    </properties>
   </object>
+  <object name="dodgeitem" x="1339" y="478" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="collision">
   <object x="0" y="512" width="256" height="32"/>

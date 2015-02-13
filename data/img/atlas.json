@@ -9,6 +9,14 @@
 	"sourceSize": {"w":256,"h":64}
 },
 {
+	"filename": "dodge.png",
+	"frame": {"x":964,"y":2,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
 	"filename": "end.png",
 	"frame": {"x":2,"y":2,"w":960,"h":640},
 	"rotated": false,
@@ -63,6 +71,6 @@
 	"format": "RGBA8888",
 	"size": {"w":1024,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:f245f5e61e0ff3b8ef9888d82e4760bb:bb7fee2d20e94c4d1e5b5e46e956b617:cbce6b53f0f49e0bf15173c25c41f876$"
+	"smartupdate": "$TexturePacker:SmartUpdate:7339caec71a1e260e4ec80a18491da72:10fe2a5647235b7e59faccace6142244:cbce6b53f0f49e0bf15173c25c41f876$"
 }
 }

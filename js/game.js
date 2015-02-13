@@ -1,6 +1,8 @@
 /* Game namespace */
 var game = {
-
+  abilities: {
+    Dodge: false
+  },
   onload: function () {
     // Initialize the video.
     var scale = '1';
@@ -14,12 +16,10 @@ var game = {
     }
 
     // add "#debug" to the URL to enable the debug Panel
-    //if (document.location.hash === "#debug") {
-      window.onReady(function () {
-        me.plugin.register.defer(this, me.debug.Panel, "debug", me.input.KEY.V);
-        me.debug.renderQuadTree = true;
-      });
-    //}
+    // window.onReady(function () {
+    //   me.plugin.register.defer(this, me.debug.Panel, "debug", me.input.KEY.V);
+    //   me.debug.renderQuadTree = true;
+    // });
 
     // Initialize the audio.
     me.audio.init("mp3,ogg");

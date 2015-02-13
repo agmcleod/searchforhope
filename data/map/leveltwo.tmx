@@ -41,21 +41,19 @@
  <objectgroup name="collision">
   <object x="383" y="62" width="1536.85" height="33.1094"/>
   <object x="1824" y="96" width="96" height="32"/>
-  <object x="31.3516" y="128.89">
-   <polyline points="0,0 162.564,161.403"/>
-  </object>
-  <object x="195.832" y="290.12">
-   <polyline points="-1.21862,0.406207 92.8936,-1.16117 124.766,32.3364"/>
-  </object>
-  <object x="319.674" y="322.305">
-   <polyline points="0,0 30.2572,-33.546 130.237,-33.546 351.297,191.08"/>
-  </object>
-  <object x="670.92" y="513.057">
-   <polyline points="0,0 96.6914,1.31553 96.6914,63.8032"/>
-  </object>
   <object x="30.9137" y="9.15961">
    <polyline points="0,0 0,118.502"/>
   </object>
   <object x="766.579" y="577.089" width="1154.18" height="17.2265"/>
+  <object x="32" y="130">
+   <polygon points="0,0 160.528,158.094 159.396,199.396 0,37"/>
+  </object>
+  <object x="319.837" y="323.743">
+   <polygon points="0,0 32.5478,-35.1517 130.625,-35.1517 352.385,189.211 1.30191,185.74"/>
+  </object>
+  <object x="193.117" y="289.893">
+   <polygon points="0,0 95.0397,-0.433971 127.154,33.8498 127.588,219.589 -3.47177,216.118"/>
+  </object>
+  <object x="672.221" y="513.388" width="94.1718" height="80.2847"/>
  </objectgroup>
 </map>

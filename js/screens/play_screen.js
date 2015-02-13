@@ -4,6 +4,7 @@ game.PlayScreen = me.ScreenObject.extend({
     me.input.bindKey(me.input.KEY.D, 'right');
     me.input.bindKey(me.input.KEY.SPACE, 'jump', true);
     me.input.bindKey(me.input.KEY.E, 'dash');
+    me.input.bindKey(me.input.KEY.SHIFT, 'dodge');
     me.input.bindPointer(me.input.KEY.E);
   },
 
@@ -81,6 +82,7 @@ game.PlayScreen = me.ScreenObject.extend({
     me.input.unbindKey(me.input.KEY.D);
     me.input.unbindKey(me.input.KEY.E);
     me.input.unbindKey(me.input.KEY.SPACE);
+    me.input.unbindKey(me.input.KEY.SHIFT);
     me.input.unbindPointer();
   },
 
@@ -89,6 +91,7 @@ game.PlayScreen = me.ScreenObject.extend({
     me.pool.register('greenthing', game.GreenThing, true);
     me.pool.register('redthing', game.RedThing, true);
     me.pool.register('blackthing', game.BlackThing, true);
+    me.pool.register('dodgeitem', game.DodgeItem);
     me.pool.register('game.PositionLevelEntity', game.PositionLevelEntity, false);
   },
 

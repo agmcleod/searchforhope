@@ -34,6 +34,12 @@ game.Player = me.Entity.extend({
     var messageTwoRegion = game.atlas.getRegion("messagetwo.png");
     this.messageTwoSprite = new me.Sprite(this.pos.x, this.pos.y, game.atlas.getTexture(), messageTwoRegion.width, messageTwoRegion.height);
     this.messageTwoSprite.offset.setV(messageTwoRegion.offset);
+
+    for (var ability in game.abilities) {
+      if (game.abilities.hasOwnProperty(ability)) {
+        this['can' + ability] = game.abilities[ability];
+      }
+    };
   },
 
   damagedCallback: function () {
@@ -68,6 +74,15 @@ game.Player = me.Entity.extend({
         this.body.vel.x += this.body.accel.x * me.timer.tick;
         this.movementSetup();
       }
+    }
+
+    if (me.input.isKeyPressed('dodge') && this.canDodge && !this.dodging) {
+      this.dodging = true;
+      this.renderable.setOpacity(0.5);
+      me.timer.setTimeout((function () {
+        this.dodging = false;
+        this.renderable.setOpacity(1);
+      }).bind(this), 500);
     }
 
     if (this.body.vel.x === 0 && !this.renderable.isCurrentAnimation("dash")) {
@@ -109,7 +124,7 @@ game.Player = me.Entity.extend({
   onCollision: function (response, other) {
     switch (other.body.collisionType) {
       case me.collision.types.ENEMY_OBJECT:
-        if (!this.damaged && !other.dead) {
+        if (!this.damaged && !other.dead && !this.dodging) {
           this.damaged = true;
           this.health -= 1;
           game.playScreen.lowerHealth();
@@ -124,6 +139,14 @@ game.Player = me.Entity.extend({
           }
         }
 
+        return false;
+        break;
+      case me.collision.types.COLLECTABLE_OBJECT:
+        if (other.type === 'dodge') {
+          this.canDodge = true;
+          game.abilities.Dodge = true;
+          me.game.world.removeChild(other);
+        }
         return false;
         break;
       case me.collision.types.ACTION_OBJECT:
