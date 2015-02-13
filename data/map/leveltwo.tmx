@@ -34,6 +34,9 @@
     <property name="to_y" value="480"/>
    </properties>
   </object>
+  <object name="redthing" x="890.994" y="538.808" width="32" height="32"/>
+  <object name="redthing" x="1494.88" y="541.679" width="32" height="32"/>
+  <object name="redthing" x="1745.62" y="540.722" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="collision">
   <object x="383" y="62" width="1536.85" height="33.1094"/>
@@ -50,11 +53,9 @@
   <object x="670.92" y="513.057">
    <polyline points="0,0 96.6914,1.31553 96.6914,63.8032"/>
   </object>
-  <object x="768.313" y="577.428">
-   <polyline points="0,0 1151.28,1.19303"/>
-  </object>
   <object x="30.9137" y="9.15961">
    <polyline points="0,0 0,118.502"/>
   </object>
+  <object x="766.579" y="577.089" width="1154.18" height="17.2265"/>
  </objectgroup>
 </map>

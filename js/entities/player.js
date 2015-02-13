@@ -109,7 +109,7 @@ game.Player = me.Entity.extend({
   onCollision: function (response, other) {
     switch (other.body.collisionType) {
       case me.collision.types.ENEMY_OBJECT:
-        if (!this.damaged) {
+        if (!this.damaged && !other.dead) {
           this.damaged = true;
           this.health -= 1;
           game.playScreen.lowerHealth();
