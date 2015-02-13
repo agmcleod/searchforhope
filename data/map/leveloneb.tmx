@@ -40,6 +40,13 @@
     <property name="to_y" value="480"/>
    </properties>
   </object>
+  <object name="me.LevelEntity" x="1059" y="614" width="341" height="13">
+   <properties>
+    <property name="duration" value="150"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="leveltwo"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object x="0" y="512" width="256" height="32"/>

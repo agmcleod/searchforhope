@@ -60,7 +60,7 @@ game.PlayScreen = me.ScreenObject.extend({
       }
     });
 
-    var levelString = 'leveloneb';
+    var levelString = location.hash.indexOf('#level:') !== -1 ? (location.hash + '').replace('#level:','') : 'intro';
 
     me.levelDirector.loadLevel(levelString);
 
