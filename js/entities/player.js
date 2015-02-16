@@ -129,9 +129,12 @@ game.Player = me.Entity.extend({
           this.health -= 1;
           game.playScreen.lowerHealth();
           if(this.health <= 0) {
-            game.playScreen.resetHealth();
             this.renderable.flicker(300, function () {
-              me.levelDirector.loadLevel.defer(this, 'intro');
+              game.playScreen.resetHealth();
+              me.game.viewport.fadeIn('#000000', 200, function () {
+                me.levelDirector.loadLevel('intro');
+                me.game.viewport.fadeOut('#000000', 200);
+              });
             });
           }
           else {
@@ -172,12 +175,14 @@ game.Player = me.Entity.extend({
   },
 
   update: function (time) {
-    this.handleInput();
+    if(this.health > 0) {
+      this.handleInput();
+    }
 
     this.body.update();
     me.collision.check(this);
 
-    if (this.body.vel.x !== 0 || this.body.vel.y !== 0) {
+    if (this.body.vel.x !== 0 || this.body.vel.y !== 0 || this.health <= 0) {
       this._super(me.Entity, 'update', [time]);
     }
     else if(this.dashing) {
