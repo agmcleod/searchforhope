@@ -9,7 +9,7 @@
   </tile>
  </tileset>
  <tileset firstgid="8" name="tiles" tilewidth="32" tileheight="32">
-  <image source="tiles.png" width="160" height="192"/>
+  <image source="tiles.png" width="160" height="224"/>
  </tileset>
  <imagelayer name="background">
   <image source="leveltwobg.png"/>
@@ -37,6 +37,13 @@
   <object name="redthing" x="890.994" y="538.808" width="32" height="32"/>
   <object name="redthing" x="1494.88" y="541.679" width="32" height="32"/>
   <object name="redthing" x="1745.62" y="540.722" width="32" height="32"/>
+  <object name="me.LevelEntity" x="1902" y="149" width="13" height="426">
+   <properties>
+    <property name="duration" value="150"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="leveltwob"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object x="383" y="62" width="1536.85" height="33.1094"/>

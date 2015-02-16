@@ -15,6 +15,7 @@ game.resources = [
   { name: 'levelthree', type: 'tmx', src: 'data/map/levelthree.tmx' },
   { name: 'levelthreebg', type: 'image', src: 'data/map/levelthreebg.png' },
   { name: 'leveltwo', type: 'tmx', src: 'data/map/leveltwo.tmx' },
+  { name: 'leveltwob', type: 'tmx', src: 'data/map/leveltwob.tmx' },
   { name: 'leveltwobg', type: 'image', src: 'data/map/leveltwobg.png' },
   { name: 'metatiles32x32', type: 'image', src: 'data/map/metatiles32x32.png' },
   { name: 'tiles', type: 'image', src: 'data/map/tiles.png' },
