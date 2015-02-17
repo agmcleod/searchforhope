@@ -22,6 +22,7 @@
     <property name="to_y" value="544"/>
    </properties>
   </object>
+  <object name="shooter" x="1343.61" y="319.003" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="collision">
   <object x="10" y="100" height="1"/>
@@ -37,17 +38,17 @@
   <object x="542.944" y="98.2648">
    <polygon points="0,0 13.6824,62.1929 31.0965,-2.48772"/>
   </object>
-  <object x="310.343" y="64.0587" width="1296.72" height="30.4745"/>
+  <object x="303.507" y="64.0587" width="1296.72" height="30.4745"/>
   <object x="835.251" y="95.7771">
    <polygon points="0,0 29.8526,-0.621929 8.08508,47.8886"/>
   </object>
-  <object x="1218.36" y="94.5332" rotation="90">
+  <object x="1218.36" y="94.5332">
    <polygon points="0,0 29.8526,-0.621929 8.08508,47.8886"/>
   </object>
   <object x="-1.38927" y="576.549" width="766.88" height="63.9066"/>
   <object x="1003.06" y="634.899" height="1.38927"/>
-  <object x="994.721" y="580.717" width="208.391" height="56.9603"/>
-  <object x="1121.14" y="543.206" width="61.1281" height="37.5104"/>
+  <object x="992.442" y="576.717" width="207.632" height="62.277"/>
+  <object x="1121.14" y="544.206" width="58.8495" height="32.9532"/>
   <object x="1153.23" y="351.881" width="446.321" height="193.159"/>
   <object type="spikes" x="768.68" y="614.705" width="222.01" height="22.6784"/>
   <object x="859.394" y="617.092" width="1.1936" height="1.1936"/>
