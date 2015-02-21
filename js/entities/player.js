@@ -124,23 +124,7 @@ game.Player = me.Entity.extend({
   onCollision: function (response, other) {
     switch (other.body.collisionType) {
       case me.collision.types.ENEMY_OBJECT:
-        if (!this.damaged && !this.dodging) {
-          this.damaged = true;
-          this.health -= 1;
-          game.playScreen.lowerHealth();
-          if(this.health <= 0) {
-            this.renderable.flicker(300, function () {
-              game.playScreen.resetHealth();
-              me.game.viewport.fadeIn('#000000', 200, function () {
-                me.levelDirector.loadLevel('intro');
-                me.game.viewport.fadeOut('#000000', 200);
-              });
-            });
-          }
-          else {
-            this.renderable.flicker(300, this.damagedCallback.bind(this));
-          }
-        }
+        this.takeDamage();
 
         return false;
         break;
@@ -154,6 +138,12 @@ game.Player = me.Entity.extend({
         break;
       case me.collision.types.ACTION_OBJECT:
         return false;
+        break;
+      case me.collision.types.WORLD_SHAPE:
+        if (other.type === "spikes") {
+          this.takeDamage();
+        }
+        return true;
         break;
       default:
         return true;
@@ -172,6 +162,26 @@ game.Player = me.Entity.extend({
 
   setMovementVelocity: function () {
     this.body.setVelocity(5, 21);
+  },
+
+  takeDamage: function () {
+    if (!this.damaged && !this.dodging) {
+      this.damaged = true;
+      this.health -= 1;
+      game.playScreen.lowerHealth();
+      if(this.health <= 0) {
+        this.renderable.flicker(300, function () {
+          game.playScreen.resetHealth();
+          me.game.viewport.fadeIn('#000000', 200, function () {
+            me.levelDirector.loadLevel('intro');
+            me.game.viewport.fadeOut('#000000', 200);
+          });
+        });
+      }
+      else {
+        this.renderable.flicker(300, this.damagedCallback.bind(this));
+      }
+    }
   },
 
   update: function (time) {
