@@ -16,7 +16,7 @@ game.PlayScreen = me.ScreenObject.extend({
    */
   onResetEvent: function() {
     this.bindKeys();
-    this.uiFont = new me.Font('Arial', '10px', '#ff0000');
+    this.uiFont = new me.Font('Arial', '12px', '#ff0000');
 
     this.registerEntities();
 

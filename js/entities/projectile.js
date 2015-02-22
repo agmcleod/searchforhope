@@ -27,7 +27,7 @@ game.Projectile = me.Entity.extend({
     this.startPosX = this.pos.x;
   },
 
-  onCollision: function (obj, res) {
+  onCollision: function (res, obj) {
     if (!obj.dodging) {
       me.game.world.removeChild(this);
     }
