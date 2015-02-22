@@ -29,6 +29,13 @@
   <object x="31.5025" y="1601.44">
    <polygon points="0,0 0.370617,33.7262 37.4324,32.2437"/>
   </object>
+  <object name="me.LevelEntity" x="1567.63" y="369.698" width="28.6588" height="299.962">
+   <properties>
+    <property name="duration" value="150"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="leveltwod"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object x="0" y="64" width="416" height="32"/>
@@ -49,10 +56,10 @@
   <object x="254.514" y="1730.86" width="654.323" height="33.1121"/>
   <object x="1183.82" y="673.097" width="428.839" height="31.9201"/>
   <object x="384.79" y="353.027">
-   <polygon points="0,0 126.146,127.961 125.238,285.87 -5.44514,286.777"/>
+   <polygon points="0,0 126.887,127.961 127.462,284.758 -5.44514,286.777"/>
   </object>
   <object x="511.843" y="576.277">
-   <polygon points="0,0 33.5784,-0.907523 96.1975,64.4342 93.4749,152.464 -2.72257,146.111"/>
+   <polygon points="-4.07709,0 33.5784,-0.907523 100.275,69.2526 101.258,152.093 -2.72257,146.111"/>
   </object>
   <object x="608.041" y="1089.94">
    <polygon points="0,0 -0.907523,-362.102 225.973,-358.472 222.343,-193.302 33.5784,-0.907523"/>

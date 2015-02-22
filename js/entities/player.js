@@ -63,15 +63,17 @@ game.Player = me.Entity.extend({
   },
 
   handleInput: function () {
-    if (me.input.isKeyPressed('left')) {
-      this.renderable.flipX(true);
-      this.body.vel.x -= this.body.accel.x * me.timer.tick;
-      this.movementSetup();
-    }
-    else if (me.input.isKeyPressed('right')) {
-      this.renderable.flipX(false);
-      this.body.vel.x += this.body.accel.x * me.timer.tick;
-      this.movementSetup();
+    if (!this.dashing) {
+      if (me.input.isKeyPressed('left')) {
+        this.renderable.flipX(true);
+        this.body.vel.x -= this.body.accel.x * me.timer.tick;
+        this.movementSetup();
+      }
+      else if (me.input.isKeyPressed('right')) {
+        this.renderable.flipX(false);
+        this.body.vel.x += this.body.accel.x * me.timer.tick;
+        this.movementSetup();
+      }
     }
 
     if (me.input.isKeyPressed('dodge') && this.canDodge && !this.dodging) {
