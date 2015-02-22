@@ -5,6 +5,9 @@
  </tileset>
  <imagelayer name="background">
   <image source="leveltwobg.png"/>
+  <properties>
+   <property name="ratio" value="0.3"/>
+  </properties>
  </imagelayer>
  <layer name="ground" width="50" height="20">
   <data encoding="base64">
@@ -23,6 +26,13 @@
    </properties>
   </object>
   <object name="shooter" x="1343.61" y="319.003" width="32" height="32"/>
+  <object name="me.LevelEntity" x="1565" y="95" width="32" height="256">
+   <properties>
+    <property name="duration" value="150"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="leveltwoc"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object x="10" y="100" height="1"/>
