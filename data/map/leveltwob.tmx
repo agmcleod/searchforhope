@@ -20,6 +20,7 @@
    <properties>
     <property name="duration" value="150"/>
     <property name="fade" value="#000000"/>
+    <property name="flip" value="true"/>
     <property name="to" value="leveltwo"/>
     <property name="to_x" value="1856"/>
     <property name="to_y" value="544"/>

@@ -52,7 +52,7 @@
  <objectgroup name="collision">
   <object x="0" y="512" width="256" height="32"/>
   <object x="224" y="510">
-   <polygon points="0,0 193,-188 193,-157 33,1"/>
+   <polygon points="-1.06033,2.38575 193,-188 193,-157 33,1"/>
   </object>
   <object x="416" y="320" width="192" height="32"/>
   <object x="672" y="512" width="384" height="32"/>
@@ -63,5 +63,7 @@
   <object x="0" y="0" width="96" height="64"/>
   <object x="1278" y="513" width="128" height="64"/>
   <object x="1406" y="65" width="32" height="512"/>
+  <object x="542" y="347" width="33" height="90"/>
+  <object x="558" y="386" width="71" height="30"/>
  </objectgroup>
 </map>

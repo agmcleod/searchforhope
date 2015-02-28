@@ -11,6 +11,7 @@ game.PlayScreen = me.ScreenObject.extend({
   lowerHealth: function() {
     this.playerHealth--;
   },
+
   /**
    *  action to perform on state change
    */
@@ -97,11 +98,21 @@ game.PlayScreen = me.ScreenObject.extend({
     me.pool.register('dodgeitem', game.DodgeItem);
     me.pool.register('shooter', game.Shooter);
     me.pool.register('projectile', game.Projectile);
+    me.pool.register('dialogue', game.Dialogue);
     me.pool.register('game.PositionLevelEntity', game.PositionLevelEntity, false);
   },
 
   resetHealth: function() {
     this.playerHealth = 3;
+  },
+
+  startDialogue: function (x, y, regionNames) {
+    me.input.bindKey(me.input.KEY.ENTER, 'next', true);
+    me.game.world.addChild(me.pool.pull('dialogue', x, y, regionNames));
+  },
+
+  stopDialogue: function () {
+    me.input.unbindKey(me.input.KEY.ENTER);
   }
 });
 

@@ -6,10 +6,17 @@ game.DodgeItem = me.Entity.extend({
     this.renderable.offset.setV(region.offset);
     this.body.collisionType = me.collision.types.COLLECTABLE_OBJECT;
     this.type = 'dodge';
+    this.triggered = false;
   },
 
-  onCollision: function () {
-    return true;
+  onCollision: function (res, obj) {
+    if (obj.name === "player") {
+      if (!this.triggered) {
+        this.triggered = true;
+        game.playScreen.startDialogue(this.pos.x - 300, this.pos.y - 200, ['dodgemessageone.png', 'dodgemessagetwo.png', 'dodgemessagethree.png']);
+      }
+      return false;
+    }
   },
 
   update: function (dt) {

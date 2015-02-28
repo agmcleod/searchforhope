@@ -11,6 +11,8 @@ game.Player = me.Entity.extend({
     this.body.setFriction(1.5, 0);
     this.body.collisionType = me.collision.types.PLAYER_OBJECT;
 
+    this.name = 'player';
+
     this.renderable = new me.AnimationSheet(0, 0, {
       image: game.atlas.getTexture(),
       spritewidth: this.width,
@@ -27,13 +29,7 @@ game.Player = me.Entity.extend({
     this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
     this.renderable.setCurrentAnimation('run');
 
-    var messageOneRegion = game.atlas.getRegion("messageone.png");
-    this.messageOneSprite = new me.Sprite(this.pos.x, this.pos.y, game.atlas.getTexture(), messageOneRegion.width, messageOneRegion.height);
-    this.messageOneSprite.offset.setV(messageOneRegion.offset);
-
-    var messageTwoRegion = game.atlas.getRegion("messagetwo.png");
-    this.messageTwoSprite = new me.Sprite(this.pos.x, this.pos.y, game.atlas.getTexture(), messageTwoRegion.width, messageTwoRegion.height);
-    this.messageTwoSprite.offset.setV(messageTwoRegion.offset);
+    this.setupMonologueSprites();
 
     for (var ability in game.abilities) {
       if (game.abilities.hasOwnProperty(ability)) {
@@ -96,8 +92,11 @@ game.Player = me.Entity.extend({
         this.body.vel.y -= (this.body.maxVel.y * this.jumpState++) * me.timer.tick;
       }
     }
+    else if (!this.body.falling && !this.body.jumping) {
+      this.jumpState = 1;
+    }
 
-    if (me.input.isKeyPressed('dash') && !this.dashing && !this.body.jumping) {
+    if (me.input.isKeyPressed('dash') && !this.dashing && !this.body.jumping && !this.body.falling) {
       this.dashing = true;
       this.setDashVelocity();
       var mousePos = me.game.viewport.localToWorld(me.input.mouse.pos.x, me.input.mouse.pos.y);
@@ -132,7 +131,6 @@ game.Player = me.Entity.extend({
         if (other.type === 'dodge') {
           this.canDodge = true;
           game.abilities.Dodge = true;
-          me.game.world.removeChild(other);
         }
         return false;
         break;
@@ -162,6 +160,16 @@ game.Player = me.Entity.extend({
 
   setMovementVelocity: function () {
     this.body.setVelocity(5, 21);
+  },
+
+  setupMonologueSprites: function () {
+    var messageOneRegion = game.atlas.getRegion("messageone.png");
+    this.messageOneSprite = new me.Sprite(this.pos.x, this.pos.y, game.atlas.getTexture(), messageOneRegion.width, messageOneRegion.height);
+    this.messageOneSprite.offset.setV(messageOneRegion.offset);
+
+    var messageTwoRegion = game.atlas.getRegion("messagetwo.png");
+    this.messageTwoSprite = new me.Sprite(this.pos.x, this.pos.y, game.atlas.getTexture(), messageTwoRegion.width, messageTwoRegion.height);
+    this.messageTwoSprite.offset.setV(messageTwoRegion.offset);
   },
 
   takeDamage: function () {

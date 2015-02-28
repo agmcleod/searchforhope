@@ -33,7 +33,7 @@
 	"sourceSize": {"w":300,"h":170}
 },
 {
-	"filename": "dodgemesssagetwo.png",
+	"filename": "dodgemessagetwo.png",
 	"frame": {"x":2,"y":644,"w":300,"h":170},
 	"rotated": false,
 	"trimmed": false,
@@ -95,6 +95,6 @@
 	"format": "RGBA8888",
 	"size": {"w":1024,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:05880141aa5a1e8822b528532541cd65:89d90a5a1858ae96c297bc5dade54e9f:cbce6b53f0f49e0bf15173c25c41f876$"
+	"smartupdate": "$TexturePacker:SmartUpdate:ddd09aa142f91cd0cddaff2de3e3bc1a:89d90a5a1858ae96c297bc5dade54e9f:cbce6b53f0f49e0bf15173c25c41f876$"
 }
 }
