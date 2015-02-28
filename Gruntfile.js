@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: ['lib/melonJS-<%= pkg.melonjs_version %>.js', 'lib/plugins/*.js', 'js/game.js', 'js/resources.js','js/**/*.js'],
+        src: ['lib/melonJS-<%= pkg.version %>.js', 'lib/plugins/*.js', 'js/game.js', 'build/js/resources.js', 'js/**/*.js'],
         dest: 'build/js/app.js'
       }
     },
@@ -13,18 +13,30 @@ module.exports = function(grunt) {
           src: 'index.css',
           dest: 'build/index.css'
         },{
+          src: 'main.js',
+          dest: 'build/main.js'
+        },{
+          src: 'manifest.json',
+          dest: 'build/manifest.json'
+        },{
+          src: 'package.json',
+          dest: 'build/package.json'
+        },{
           src: 'data/**/*',
           dest: 'build/'
         }]
       }
+    },
+    clean: {
+      app: ['build/js/app.js'],
+      dist: ['build/','bin/'],
     },
     processhtml: {
       dist: {
         options: {
           process: true,
           data: {
-            title: 'My app',
-            message: 'This is production distribution'
+            title: '<%= pkg.name %>',
           }
         },
         files: {
@@ -45,11 +57,44 @@ module.exports = function(grunt) {
         }
       }
     },
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          keepalive: true
+        }
+      }
+    },
+    'download-atom-shell': {
+      version: '0.21.2',
+      outputDir: 'bin'
+    },
+    asar: {
+      app: {
+        cwd: 'build',
+        src: ['**/*', '!js/app.js'],
+        expand: true,
+        dest: 'bin/' + (
+          process.platform === 'darwin'
+            ? 'Atom.app/Contents/Resources/'
+            : 'resources/'
+        ) + 'app.asar'
+      },
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-processhtml');
-  grunt.registerTask('default', ['concat', 'uglify', 'copy', 'processhtml']);
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-download-atom-shell');
+  grunt.loadNpmTasks('grunt-asar');
+
+  // Custom Tasks
+  grunt.loadTasks('tasks');
+
+  grunt.registerTask('default', ['concat', 'uglify', 'copy', 'processhtml', 'clean:app']);
+  grunt.registerTask('dist', ['default', 'download-atom-shell', 'asar']);
 }

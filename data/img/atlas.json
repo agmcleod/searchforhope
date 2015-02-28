@@ -2,7 +2,7 @@
 
 {
 	"filename": "blackthing.png",
-	"frame": {"x":2,"y":829,"w":256,"h":64},
+	"frame": {"x":456,"y":903,"w":256,"h":64},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":64},
@@ -17,6 +17,30 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
+	"filename": "dodgemessageone.png",
+	"frame": {"x":304,"y":644,"w":300,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
+	"sourceSize": {"w":300,"h":170}
+},
+{
+	"filename": "dodgemessagethree.png",
+	"frame": {"x":2,"y":816,"w":300,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
+	"sourceSize": {"w":300,"h":170}
+},
+{
+	"filename": "dodgemesssagetwo.png",
+	"frame": {"x":2,"y":644,"w":300,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
+	"sourceSize": {"w":300,"h":170}
+},
+{
 	"filename": "end.png",
 	"frame": {"x":2,"y":2,"w":960,"h":640},
 	"rotated": false,
@@ -26,7 +50,7 @@
 },
 {
 	"filename": "greenthing.png",
-	"frame": {"x":154,"y":765,"w":128,"h":32},
+	"frame": {"x":132,"y":988,"w":128,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
@@ -34,7 +58,7 @@
 },
 {
 	"filename": "messageone.png",
-	"frame": {"x":132,"y":644,"w":150,"h":85},
+	"frame": {"x":434,"y":816,"w":150,"h":85},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
@@ -42,7 +66,7 @@
 },
 {
 	"filename": "messagetwo.png",
-	"frame": {"x":2,"y":742,"w":150,"h":85},
+	"frame": {"x":304,"y":914,"w":150,"h":85},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
@@ -50,7 +74,7 @@
 },
 {
 	"filename": "player.png",
-	"frame": {"x":2,"y":644,"w":128,"h":96},
+	"frame": {"x":304,"y":816,"w":128,"h":96},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":96},
@@ -58,7 +82,7 @@
 },
 {
 	"filename": "redthing.png",
-	"frame": {"x":154,"y":731,"w":128,"h":32},
+	"frame": {"x":2,"y":988,"w":128,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
@@ -71,6 +95,6 @@
 	"format": "RGBA8888",
 	"size": {"w":1024,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:7339caec71a1e260e4ec80a18491da72:10fe2a5647235b7e59faccace6142244:cbce6b53f0f49e0bf15173c25c41f876$"
+	"smartupdate": "$TexturePacker:SmartUpdate:05880141aa5a1e8822b528532541cd65:89d90a5a1858ae96c297bc5dade54e9f:cbce6b53f0f49e0bf15173c25c41f876$"
 }
 }
