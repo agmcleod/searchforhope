@@ -87,6 +87,7 @@ game.Player = me.Entity.extend({
 
     if (me.input.isKeyPressed('jump')) {
       this.jumpState = (this.body.vel.y === 0)?1:this.jumpState;
+      this.body.jumping = true;
 
       if (this.jumpState <= 1) {
         this.body.vel.y -= (this.body.maxVel.y * this.jumpState++) * me.timer.tick;
@@ -96,7 +97,7 @@ game.Player = me.Entity.extend({
       this.jumpState = 1;
     }
 
-    if (me.input.isKeyPressed('dash') && !this.dashing && !this.body.jumping && !this.body.falling) {
+    if (me.input.isKeyPressed('dash') && !this.dashing && this.body.jumping) {
       this.dashing = true;
       this.setDashVelocity();
       var mousePos = me.game.viewport.localToWorld(me.input.mouse.pos.x, me.input.mouse.pos.y);

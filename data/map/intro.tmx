@@ -9,7 +9,7 @@
   </tile>
  </tileset>
  <tileset firstgid="8" name="tiles" tilewidth="32" tileheight="32">
-  <image source="tiles.png" width="160" height="192"/>
+  <image source="tiles.png" width="160" height="224"/>
  </tileset>
  <imagelayer name="background">
   <image source="introbackground.png"/>
@@ -36,5 +36,6 @@
   <object x="32" y="576" width="1152" height="32"/>
   <object x="0" y="0" width="32" height="640"/>
   <object x="1472" y="576" width="192" height="32"/>
+  <object x="2" y="5" width="1915" height="20"/>
  </objectgroup>
 </map>
