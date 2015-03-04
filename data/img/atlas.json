@@ -2,15 +2,39 @@
 
 {
 	"filename": "blackthing.png",
-	"frame": {"x":738,"y":644,"w":256,"h":64},
+	"frame": {"x":964,"y":174,"w":256,"h":64},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":64},
 	"sourceSize": {"w":256,"h":64}
 },
 {
+	"filename": "campmsg2.png",
+	"frame": {"x":1474,"y":318,"w":250,"h":142},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
+	"sourceSize": {"w":250,"h":142}
+},
+{
+	"filename": "campmsgone.png",
+	"frame": {"x":1732,"y":221,"w":250,"h":142},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
+	"sourceSize": {"w":250,"h":142}
+},
+{
+	"filename": "campsite.png",
+	"frame": {"x":1222,"y":174,"w":256,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":32},
+	"sourceSize": {"w":256,"h":32}
+},
+{
 	"filename": "dodge.png",
-	"frame": {"x":964,"y":2,"w":32,"h":32},
+	"frame": {"x":2000,"y":89,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -18,7 +42,7 @@
 },
 {
 	"filename": "dodgemessageone.png",
-	"frame": {"x":304,"y":644,"w":300,"h":170},
+	"frame": {"x":1568,"y":2,"w":300,"h":170},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
@@ -26,7 +50,7 @@
 },
 {
 	"filename": "dodgemessagethree.png",
-	"frame": {"x":2,"y":816,"w":300,"h":170},
+	"frame": {"x":1266,"y":2,"w":300,"h":170},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
@@ -34,7 +58,7 @@
 },
 {
 	"filename": "dodgemessagetwo.png",
-	"frame": {"x":2,"y":644,"w":300,"h":170},
+	"frame": {"x":964,"y":2,"w":300,"h":170},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
@@ -50,7 +74,7 @@
 },
 {
 	"filename": "greenthing.png",
-	"frame": {"x":132,"y":988,"w":128,"h":32},
+	"frame": {"x":1862,"y":187,"w":128,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
@@ -58,15 +82,15 @@
 },
 {
 	"filename": "messageone.png",
-	"frame": {"x":586,"y":816,"w":150,"h":85},
+	"frame": {"x":964,"y":240,"w":250,"h":142},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
-	"sourceSize": {"w":150,"h":85}
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
+	"sourceSize": {"w":250,"h":142}
 },
 {
 	"filename": "messagetwo.png",
-	"frame": {"x":456,"y":903,"w":150,"h":85},
+	"frame": {"x":1870,"y":2,"w":150,"h":85},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
@@ -74,7 +98,7 @@
 },
 {
 	"filename": "player.png",
-	"frame": {"x":304,"y":816,"w":128,"h":96},
+	"frame": {"x":1870,"y":89,"w":128,"h":96},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":96},
@@ -82,7 +106,7 @@
 },
 {
 	"filename": "redthing.png",
-	"frame": {"x":2,"y":988,"w":128,"h":32},
+	"frame": {"x":1732,"y":174,"w":128,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
@@ -90,27 +114,27 @@
 },
 {
 	"filename": "surfacetwomsg1.png",
-	"frame": {"x":434,"y":816,"w":150,"h":85},
+	"frame": {"x":1222,"y":208,"w":250,"h":142},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
-	"sourceSize": {"w":150,"h":85}
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
+	"sourceSize": {"w":250,"h":142}
 },
 {
 	"filename": "surfacetwomsg2.png",
-	"frame": {"x":304,"y":914,"w":150,"h":85},
+	"frame": {"x":1480,"y":174,"w":250,"h":142},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
-	"sourceSize": {"w":150,"h":85}
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
+	"sourceSize": {"w":250,"h":142}
 }],
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker ",
 	"version": "1.0",
 	"image": "atlas.png",
 	"format": "RGBA8888",
-	"size": {"w":1024,"h":1024},
+	"size": {"w":2048,"h":2048},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:54e367c8f14dc0c0a1e6460c7944ef85:085b1100ad370a18332d1181a3aea2ce:cbce6b53f0f49e0bf15173c25c41f876$"
+	"smartupdate": "$TexturePacker:SmartUpdate:0d099cbaf1f7cea4cef6c54831f304c2:92cec3e53aa541e26c8460dba11066e5:cbce6b53f0f49e0bf15173c25c41f876$"
 }
 }

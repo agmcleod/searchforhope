@@ -37,6 +37,8 @@ game.PlayScreen = me.ScreenObject.extend({
       'final': 'ld29final'
     };
 
+    var _this = this;
+
     me.event.subscribe(me.event.LEVEL_LOADED, function (levelName) {
       // rebind player reference
       game.player = me.game.world.getChildByName("player")[0];
@@ -48,20 +50,13 @@ game.PlayScreen = me.ScreenObject.extend({
         me.audio.playTrack(track);
       }
 
-      if(levelName === 'final') {
-        me.timer.setTimeout(function() {
-          game.playScreen.drawMessageTwo = true;
-          var mt = new game.MessageTimer('drawMessageTwo');
-          mt.setStartTime();
-          me.game.world.addChild(mt);
-        }, 1000);
-
-        me.timer.setTimeout(function() {
-          me.game.world.addChild(new game.EndSprite(), 1000);
-        }, 10000);
+      if (levelName === 'surfacetwo' && !_this.surfaceTwoTextShown) {
+        _this.surfaceTwoTextShown = true;
+        _this.startDialogue(game.player.pos.x, game.player.pos.y, ["surfacetwomsg1.png", "surfacetwomsg2.png"], game.player.pos);
+      }
+      else if(levelName === 'final') {
       }
       else {
-        game.playScreen.drawMessageOne = false;
       }
     });
 
@@ -71,12 +66,8 @@ game.PlayScreen = me.ScreenObject.extend({
 
     if (levelString === "intro") {
       var player = me.game.world.getChildByName('player')[0];
-      game.playScreen.startDialogue(player.pos.x, player.pos.y, ["messageone.png"], player.pos);
+      this.startDialogue(player.pos.x, player.pos.y, ["messageone.png"], player.pos);
     }
-
-    var mt = new game.MessageTimer('drawMessageOne');
-    mt.setStartTime();
-    me.game.world.addChild(mt, 0);
   },
 
 
@@ -102,6 +93,7 @@ game.PlayScreen = me.ScreenObject.extend({
     me.pool.register('projectile', game.Projectile);
     me.pool.register('dialogue', game.Dialogue);
     me.pool.register('game.PositionLevelEntity', game.PositionLevelEntity, false);
+    me.pool.register('campsite', game.Campsite, false);
   },
 
   resetHealth: function() {
@@ -115,24 +107,5 @@ game.PlayScreen = me.ScreenObject.extend({
 
   stopDialogue: function () {
     me.input.unbindKey(me.input.KEY.ENTER);
-  }
-});
-
-
-game.MessageTimer = Object.extend({
-  init: function(field, limit) {
-    this.timeLimit = limit || 5000;
-    this.field = field;
-  },
-
-  setStartTime: function() {
-    this.startTime = me.timer.getTime();
-  },
-
-  update: function(time) {
-    if(me.timer.getTime() - this.startTime > this.timeLimit) {
-      game.playScreen[this.field] = false;
-      me.game.world.removeChild(this);
-    }
   }
 });
