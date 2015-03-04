@@ -29,8 +29,6 @@ game.Player = me.Entity.extend({
     this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
     this.renderable.setCurrentAnimation('run');
 
-    this.setupMonologueSprites();
-
     for (var ability in game.abilities) {
       if (game.abilities.hasOwnProperty(ability)) {
         this['can' + ability] = game.abilities[ability];
@@ -46,15 +44,6 @@ game.Player = me.Entity.extend({
     this._super(me.Entity, 'draw', [renderer]);
     if(this.damaged) {
       game.playScreen.uiFont.draw(renderer.getContext(), this.health, this.pos.x - 10, this.pos.y - 10);
-    }
-
-    if(game.playScreen.drawMessageOne) {
-      this.messageOneSprite.pos.set(this.pos.x + this.width, this.pos.y - this.messageOneSprite.height);
-      this.messageOneSprite.draw(renderer);
-    }
-    else if(game.playScreen.drawMessageTwo) {
-      this.messageTwoSprite.pos.set(this.pos.x + this.width, this.pos.y - this.messageTwoSprite.height);
-      this.messageTwoSprite.draw(renderer);
     }
   },
 
@@ -161,16 +150,6 @@ game.Player = me.Entity.extend({
 
   setMovementVelocity: function () {
     this.body.setVelocity(5, 21);
-  },
-
-  setupMonologueSprites: function () {
-    var messageOneRegion = game.atlas.getRegion("messageone.png");
-    this.messageOneSprite = new me.Sprite(this.pos.x, this.pos.y, game.atlas.getTexture(), messageOneRegion.width, messageOneRegion.height);
-    this.messageOneSprite.offset.setV(messageOneRegion.offset);
-
-    var messageTwoRegion = game.atlas.getRegion("messagetwo.png");
-    this.messageTwoSprite = new me.Sprite(this.pos.x, this.pos.y, game.atlas.getTexture(), messageTwoRegion.width, messageTwoRegion.height);
-    this.messageTwoSprite.offset.setV(messageTwoRegion.offset);
   },
 
   takeDamage: function () {

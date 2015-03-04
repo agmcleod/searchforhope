@@ -13,7 +13,7 @@ game.DodgeItem = me.Entity.extend({
     if (obj.name === "player") {
       if (!this.triggered) {
         this.triggered = true;
-        game.playScreen.startDialogue(this.pos.x - 300, this.pos.y - 200, ['dodgemessageone.png', 'dodgemessagetwo.png', 'dodgemessagethree.png']);
+        game.playScreen.startDialogue(this.pos.x, this.pos.y, ['dodgemessageone.png', 'dodgemessagetwo.png', 'dodgemessagethree.png']);
       }
       return false;
     }

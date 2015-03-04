@@ -69,8 +69,10 @@ game.PlayScreen = me.ScreenObject.extend({
 
     me.levelDirector.loadLevel(levelString);
 
-    this.drawMessageOne = levelString === "intro";
-    this.drawMessageTwo = false;
+    if (levelString === "intro") {
+      var player = me.game.world.getChildByName('player')[0];
+      game.playScreen.startDialogue(player.pos.x, player.pos.y, ["messageone.png"], player.pos);
+    }
 
     var mt = new game.MessageTimer('drawMessageOne');
     mt.setStartTime();
@@ -106,9 +108,9 @@ game.PlayScreen = me.ScreenObject.extend({
     this.playerHealth = 3;
   },
 
-  startDialogue: function (x, y, regionNames) {
+  startDialogue: function (x, y, regionNames, follow) {
     me.input.bindKey(me.input.KEY.ENTER, 'next', true);
-    me.game.world.addChild(me.pool.pull('dialogue', x, y, regionNames));
+    me.game.world.addChild(me.pool.pull('dialogue', x, y, regionNames, follow), 10);
   },
 
   stopDialogue: function () {

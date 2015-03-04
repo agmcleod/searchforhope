@@ -80,6 +80,24 @@ module.exports = function(grunt) {
             : 'resources/'
         ) + 'app.asar'
       },
+    },
+    resources: {
+      dist: {
+        options: {
+          dest: 'build/js/resources.js',
+          varname: 'game.resources',
+        },
+        files: [{
+          src: ['data/img/**/*.png'],
+          type: 'image'
+        },{
+          src: ['data/img/**/*.json'],
+          type: 'json'
+        },{
+          src: ['data/map/**/*'],
+          type: 'tmx'
+        }]
+      }
     }
   });
 
@@ -95,6 +113,6 @@ module.exports = function(grunt) {
   // Custom Tasks
   grunt.loadTasks('tasks');
 
-  grunt.registerTask('default', ['concat', 'uglify', 'copy', 'processhtml', 'clean:app']);
+  grunt.registerTask('default', ['resources', 'concat', 'uglify', 'copy', 'processhtml', 'clean:app']);
   grunt.registerTask('dist', ['default', 'download-atom-shell', 'asar']);
 }

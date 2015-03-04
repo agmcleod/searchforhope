@@ -2,7 +2,7 @@
 
 {
 	"filename": "blackthing.png",
-	"frame": {"x":456,"y":903,"w":256,"h":64},
+	"frame": {"x":738,"y":644,"w":256,"h":64},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":64},
@@ -58,7 +58,7 @@
 },
 {
 	"filename": "messageone.png",
-	"frame": {"x":434,"y":816,"w":150,"h":85},
+	"frame": {"x":586,"y":816,"w":150,"h":85},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
@@ -66,7 +66,7 @@
 },
 {
 	"filename": "messagetwo.png",
-	"frame": {"x":304,"y":914,"w":150,"h":85},
+	"frame": {"x":456,"y":903,"w":150,"h":85},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
@@ -87,6 +87,22 @@
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
 	"sourceSize": {"w":128,"h":32}
+},
+{
+	"filename": "surfacetwomsg1.png",
+	"frame": {"x":434,"y":816,"w":150,"h":85},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
+	"sourceSize": {"w":150,"h":85}
+},
+{
+	"filename": "surfacetwomsg2.png",
+	"frame": {"x":304,"y":914,"w":150,"h":85},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
+	"sourceSize": {"w":150,"h":85}
 }],
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker ",
@@ -95,6 +111,6 @@
 	"format": "RGBA8888",
 	"size": {"w":1024,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:c63b70bc5cae7a934d8b6ec3388cfe81:f139c8b96dfec3f032f5fbe1f55ba68b:cbce6b53f0f49e0bf15173c25c41f876$"
+	"smartupdate": "$TexturePacker:SmartUpdate:54e367c8f14dc0c0a1e6460c7944ef85:085b1100ad370a18332d1181a3aea2ce:cbce6b53f0f49e0bf15173c25c41f876$"
 }
 }
