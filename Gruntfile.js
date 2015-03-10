@@ -23,7 +23,8 @@ module.exports = function(grunt) {
           dest: 'build/package.json'
         },{
           src: 'data/**/*',
-          dest: 'build/'
+          dest: 'build/',
+          expand: true
         }]
       }
     },
@@ -61,7 +62,7 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 8000,
-          keepalive: true
+          keepalive: false
         }
       }
     },
@@ -88,23 +89,36 @@ module.exports = function(grunt) {
           varname: 'game.resources',
         },
         files: [{
+          src: ['data/bgm/**/*', 'data/sfx/**/*'],
+          type: 'audio'
+        },{
           src: ['data/img/**/*.png'],
           type: 'image'
         },{
           src: ['data/img/**/*.json'],
           type: 'json'
         },{
-          src: ['data/map/**/*'],
+          src: ['data/map/**/*.tmx'],
           type: 'tmx'
         }]
       }
-    }
+    },
+    watch: {
+      resources: {
+        files: ['data/**/*'],
+        tasks: ['resources'],
+        options: {
+          spawn: false,
+        },
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-download-atom-shell');
@@ -115,4 +129,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['resources', 'concat', 'uglify', 'copy', 'processhtml', 'clean:app']);
   grunt.registerTask('dist', ['default', 'download-atom-shell', 'asar']);
+  grunt.registerTask('serve', ['resources', 'connect', 'watch']);
 }

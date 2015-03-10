@@ -24,17 +24,17 @@ game.PlayScreen = me.ScreenObject.extend({
     this.resetHealth();
 
     this.tracksForLevels = {
-      'intro': 'ld29p1',
-      'levelone': 'ld29p1',
-      'leveloneb': 'ld29p1',
-      'levelonec': 'ld29p1',
-      'surfacetwo': 'ld29p1',
-      'leveltwo': 'ld29p1',
-      'leveltwob': 'ld29p1',
-      'leveltwoc': 'ld29p1',
-      'leveltwod': 'ld29p1',
-      'levelthree': 'ld29p2',
-      'final': 'ld29final'
+      'intro': 'Ld29p1',
+      'levelone': 'Ld29p1',
+      'leveloneb': 'Ld29p1',
+      'levelonec': 'Ld29p1',
+      'surfacetwo': 'Ld29p1',
+      'leveltwo': 'Ld29p1',
+      'leveltwob': 'Ld29p1',
+      'leveltwoc': 'Ld29p1',
+      'leveltwod': 'Ld29p1',
+      'levelthree': 'Ld29p2',
+      'final': 'Ld29final'
     };
 
     var _this = this;

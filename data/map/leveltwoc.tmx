@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="70" tilewidth="32" tileheight="32" backgroundcolor="#cbcbcb">
  <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32">
-  <image source="tiles.png" width="160" height="224"/>
+  <image source="../img/tiles.png" width="160" height="192"/>
  </tileset>
  <imagelayer name="background">
-  <image source="leveltwobg.png"/>
+  <image source="../img/leveltwobg.png"/>
   <properties>
    <property name="ratio" value="0.3"/>
    <property name="repeat" value="repeat-x"/>
