@@ -43,7 +43,6 @@ game.PlayScreen = me.ScreenObject.extend({
       // rebind player reference
       game.player = me.game.world.getChildByName("player")[0];
 
-      // Checking bound keys
       var track = game.playScreen.tracksForLevels[levelName];
       if (me.audio.getCurrentTrack() !== track) {
         me.audio.stopTrack();
