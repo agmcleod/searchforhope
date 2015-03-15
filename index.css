@@ -15,6 +15,7 @@ body {
 
 	/* Allow canvas to hit the edges of the browser viewport. */
 	margin: 0;
+	padding: 0;
 }
 
 #screen canvas {
@@ -30,15 +31,4 @@ body {
 	image-rendering: -webkit-optimize-contrast;
 	image-rendering: optimize-contrast;
 	-ms-interpolation-mode: nearest-neighbor;
-}
-
-p {
-	text-align:center;
-	font-family:Helvetica, Arial, sans-serif;
-}
-
-@media screen and (max-width:960px) {
-	.instructions {
-		display:none;
-	}
 }
