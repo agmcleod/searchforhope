@@ -44,7 +44,7 @@ game.PlayScreen = me.ScreenObject.extend({
       game.player = me.game.world.getChildByName("player")[0];
 
       var track = game.playScreen.tracksForLevels[levelName];
-      if (me.audio.getCurrentTrack() !== track) {
+      if (me.audio.getCurrentTrack() !== track.toLowerCase()) {
         me.audio.stopTrack();
         me.audio.playTrack(track);
       }
