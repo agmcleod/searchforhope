@@ -143,8 +143,7 @@ game.Player = me.Entity.extend({
         }
         else if (other.type === "lava") {
           this.health = 0;
-          this.damaged = true;
-          this.dieCallback();
+          this.takeDamage();
         }
         return true;
         break;
@@ -190,6 +189,7 @@ game.Player = me.Entity.extend({
     me.collision.check(this);
 
     if (this.body.vel.x !== 0 || this.body.vel.y !== 0 || this.health <= 0) {
+      console.log(this.flickerDuration);
       this._super(me.Entity, 'update', [time]);
     }
     else if(this.dashing) {
