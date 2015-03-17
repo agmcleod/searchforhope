@@ -1,7 +1,8 @@
 /* Game namespace */
 var game = {
   abilities: {
-    Dodge: false
+    Dodge: false,
+    Glide: false
   },
   onload: function () {
     // Initialize the video.

@@ -30,6 +30,7 @@
     <property name="to_y" value="2464"/>
    </properties>
   </object>
+  <object name="glide" x="285" y="333" width="50" height="50"/>
  </objectgroup>
  <objectgroup name="collision">
   <object x="1" y="385" width="382" height="198"/>

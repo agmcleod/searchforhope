@@ -132,6 +132,10 @@ game.Player = me.Entity.extend({
           this.canDodge = true;
           game.abilities.Dodge = true;
         }
+        if (other.type === 'glide') {
+          this.canGlide = true;
+          game.abilities.Glide = true;
+        }
         return false;
         break;
       case me.collision.types.ACTION_OBJECT:

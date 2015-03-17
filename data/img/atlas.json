@@ -2,7 +2,7 @@
 
 {
 	"filename": "blackthing.png",
-	"frame": {"x":964,"y":174,"w":256,"h":64},
+	"frame": {"x":964,"y":518,"w":256,"h":64},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":64},
@@ -10,7 +10,7 @@
 },
 {
 	"filename": "campmsg2.png",
-	"frame": {"x":1474,"y":318,"w":250,"h":142},
+	"frame": {"x":1474,"y":662,"w":250,"h":142},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
@@ -18,7 +18,7 @@
 },
 {
 	"filename": "campmsgone.png",
-	"frame": {"x":1732,"y":221,"w":250,"h":142},
+	"frame": {"x":1732,"y":518,"w":250,"h":142},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
@@ -26,7 +26,7 @@
 },
 {
 	"filename": "campsite.png",
-	"frame": {"x":1222,"y":174,"w":256,"h":32},
+	"frame": {"x":1222,"y":518,"w":256,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":32},
@@ -42,7 +42,7 @@
 },
 {
 	"filename": "dodgemessageone.png",
-	"frame": {"x":1568,"y":2,"w":300,"h":170},
+	"frame": {"x":1568,"y":346,"w":300,"h":170},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
@@ -50,7 +50,7 @@
 },
 {
 	"filename": "dodgemessagethree.png",
-	"frame": {"x":1266,"y":2,"w":300,"h":170},
+	"frame": {"x":1266,"y":346,"w":300,"h":170},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
@@ -58,7 +58,7 @@
 },
 {
 	"filename": "dodgemessagetwo.png",
-	"frame": {"x":964,"y":2,"w":300,"h":170},
+	"frame": {"x":964,"y":346,"w":300,"h":170},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
@@ -73,8 +73,64 @@
 	"sourceSize": {"w":960,"h":640}
 },
 {
+	"filename": "floatmessagefive.png",
+	"frame": {"x":1568,"y":174,"w":300,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
+	"sourceSize": {"w":300,"h":170}
+},
+{
+	"filename": "floatmessagefour.png",
+	"frame": {"x":1266,"y":174,"w":300,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
+	"sourceSize": {"w":300,"h":170}
+},
+{
+	"filename": "floatmessageone.png",
+	"frame": {"x":964,"y":174,"w":300,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
+	"sourceSize": {"w":300,"h":170}
+},
+{
+	"filename": "floatmessagesix.png",
+	"frame": {"x":1568,"y":2,"w":300,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
+	"sourceSize": {"w":300,"h":170}
+},
+{
+	"filename": "floatmessagethree.png",
+	"frame": {"x":1266,"y":2,"w":300,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
+	"sourceSize": {"w":300,"h":170}
+},
+{
+	"filename": "floatmessagetwo.png",
+	"frame": {"x":964,"y":2,"w":300,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":170},
+	"sourceSize": {"w":300,"h":170}
+},
+{
+	"filename": "glide.png",
+	"frame": {"x":1870,"y":255,"w":50,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+	"sourceSize": {"w":50,"h":50}
+},
+{
 	"filename": "greenthing.png",
-	"frame": {"x":1862,"y":187,"w":128,"h":32},
+	"frame": {"x":1870,"y":221,"w":128,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
@@ -82,7 +138,7 @@
 },
 {
 	"filename": "messageone.png",
-	"frame": {"x":964,"y":240,"w":250,"h":142},
+	"frame": {"x":964,"y":584,"w":250,"h":142},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
@@ -106,7 +162,7 @@
 },
 {
 	"filename": "redthing.png",
-	"frame": {"x":1732,"y":174,"w":128,"h":32},
+	"frame": {"x":1870,"y":187,"w":128,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
@@ -114,7 +170,7 @@
 },
 {
 	"filename": "surfacetwomsg1.png",
-	"frame": {"x":1222,"y":208,"w":250,"h":142},
+	"frame": {"x":1222,"y":552,"w":250,"h":142},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
@@ -122,7 +178,7 @@
 },
 {
 	"filename": "surfacetwomsg2.png",
-	"frame": {"x":1480,"y":174,"w":250,"h":142},
+	"frame": {"x":1480,"y":518,"w":250,"h":142},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
@@ -135,6 +191,6 @@
 	"format": "RGBA8888",
 	"size": {"w":2048,"h":2048},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:0d099cbaf1f7cea4cef6c54831f304c2:92cec3e53aa541e26c8460dba11066e5:cbce6b53f0f49e0bf15173c25c41f876$"
+	"smartupdate": "$TexturePacker:SmartUpdate:ea02eec7e9b1fa3572e67d246ec172bc:01f7da819a66c38eaeb5bcb1a7e50f32:cbce6b53f0f49e0bf15173c25c41f876$"
 }
 }

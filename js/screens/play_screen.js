@@ -88,6 +88,7 @@ game.PlayScreen = me.ScreenObject.extend({
     me.pool.register('redthing', game.RedThing, true);
     me.pool.register('blackthing', game.BlackThing, true);
     me.pool.register('dodgeitem', game.DodgeItem);
+    me.pool.register('glide', game.GlideItem);
     me.pool.register('shooter', game.Shooter);
     me.pool.register('projectile', game.Projectile);
     me.pool.register('dialogue', game.Dialogue);
