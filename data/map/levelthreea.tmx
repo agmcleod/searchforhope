@@ -20,8 +20,6 @@
   <object name="blackthing" x="2044" y="639" width="64" height="64"/>
   <object name="blackthing" x="2203" y="640" width="64" height="64"/>
   <object name="blackthing" x="2365" y="638" width="64" height="64"/>
-  <object name="laval" x="387.5" y="424.5" width="507" height="35"/>
-  <object name="lava" x="2597" y="740" width="472" height="32"/>
   <object name="player" x="60" y="344" width="32" height="32"/>
   <object name="game.PositionLevelEntity" x="5" y="76" width="19" height="301">
    <properties>
@@ -57,5 +55,8 @@
    <polygon points="0,0 -34,-33 -34,-60 2,-60"/>
   </object>
   <object x="2236" y="26" width="961" height="36"/>
+  <object x="417" y="226" width="62" height="27"/>
+  <object type="lava" x="385.5" y="422.5" width="507" height="35"/>
+  <object type="lava" x="2597" y="744" width="472" height="32"/>
  </objectgroup>
 </map>

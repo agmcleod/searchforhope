@@ -40,6 +40,16 @@ game.Player = me.Entity.extend({
     this.damaged = false;
   },
 
+  dieCallback: function () {
+    this.renderable.flicker(300, function () {
+      game.playScreen.resetHealth();
+      me.game.viewport.fadeIn('#000000', 200, function () {
+        me.levelDirector.loadLevel('intro');
+        me.game.viewport.fadeOut('#000000', 200);
+      });
+    });
+  },
+
   draw: function (renderer) {
     this._super(me.Entity, 'draw', [renderer]);
     if(this.damaged) {
@@ -131,6 +141,11 @@ game.Player = me.Entity.extend({
         if (other.type === "spikes") {
           this.takeDamage();
         }
+        else if (other.type === "lava") {
+          this.health = 0;
+          this.damaged = true;
+          this.dieCallback();
+        }
         return true;
         break;
       default:
@@ -158,13 +173,7 @@ game.Player = me.Entity.extend({
       this.health -= 1;
       game.playScreen.lowerHealth();
       if(this.health <= 0) {
-        this.renderable.flicker(300, function () {
-          game.playScreen.resetHealth();
-          me.game.viewport.fadeIn('#000000', 200, function () {
-            me.levelDirector.loadLevel('intro');
-            me.game.viewport.fadeOut('#000000', 200);
-          });
-        });
+        this.dieCallback();
       }
       else {
         this.renderable.flicker(300, this.damagedCallback.bind(this));
