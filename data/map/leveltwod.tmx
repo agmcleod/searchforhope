@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="35" height="80" tilewidth="32" tileheight="32" backgroundcolor="#cbcbcb">
  <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32">
-  <image source="../img/tiles.png" width="160" height="192"/>
+  <image source="../img/tiles.png" width="160" height="288"/>
  </tileset>
  <imagelayer name="background">
   <image source="../img/leveltwobg.png"/>
@@ -24,6 +24,13 @@
     <property name="to" value="leveltwoc"/>
     <property name="to_x" value="1536"/>
     <property name="to_y" value="640"/>
+   </properties>
+  </object>
+  <object name="me.LevelEntity" x="1104" y="2198" width="18" height="295">
+   <properties>
+    <property name="duration" value="150"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="levelthreea"/>
    </properties>
   </object>
  </objectgroup>
