@@ -8,6 +8,10 @@ game.PlayScreen = me.ScreenObject.extend({
     me.input.bindPointer(me.input.KEY.E);
   },
 
+  loadCheckpoint: function () {
+    me.levelDirector.loadLevel(this.checkpoint);
+  },
+
   lowerHealth: function() {
     this.playerHealth--;
   },
@@ -39,6 +43,8 @@ game.PlayScreen = me.ScreenObject.extend({
 
     var _this = this;
 
+    this.checkpoint = 'intro';
+
     me.event.subscribe(me.event.LEVEL_LOADED, function (levelName) {
       // rebind player reference
       game.player = me.game.world.getChildByName("player")[0];
@@ -47,6 +53,16 @@ game.PlayScreen = me.ScreenObject.extend({
       if (me.audio.getCurrentTrack() !== track.toLowerCase()) {
         me.audio.stopTrack();
         me.audio.playTrack(track);
+      }
+
+      if (levelName.indexOf('levelone') !== -1) {
+        _this.checkpoint = 'intro';
+      }
+      else if (levelName.indexOf('leveltwo') !== -1) {
+        _this.checkpoint = 'leveltwo';
+      }
+      else if (levelName.indexOf('levelthree') !== -1) {
+        _this.checkpoint = 'levelthreea';
       }
 
       if (levelName === 'surfacetwo' && !_this.surfaceTwoTextShown) {

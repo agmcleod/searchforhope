@@ -45,7 +45,7 @@ game.Player = me.Entity.extend({
     this.renderable.flicker(300, function () {
       game.playScreen.resetHealth();
       me.game.viewport.fadeIn('#000000', 200, function () {
-        me.levelDirector.loadLevel('intro');
+        game.playScreen.loadCheckpoint();
         me.game.viewport.fadeOut('#000000', 200);
       });
     });
@@ -88,7 +88,7 @@ game.Player = me.Entity.extend({
     if (me.input.isKeyPressed('jump')) {
       this.jumpState = (this.body.vel.y === 0)?1:this.jumpState;
 
-      if (this.canGlide && !this.gliding && this.body.jumping) {
+      if (this.canGlide && !this.gliding && this.jumpState > 1) {
         this.glideTime = me.timer.getTime();
         this.gliding = true;
         this.body.setVelocity(8, 0);
