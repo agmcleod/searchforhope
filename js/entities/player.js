@@ -27,6 +27,7 @@ game.Player = me.Entity.extend({
 
     this.renderable.addAnimation('dash', [0], 1);
     this.renderable.addAnimation('run', [1,2,3,4,5,6,7,8,9], 20);
+    this.renderable.addAnimation('glide', [10, 11, 12, 11], 20);
     this.renderable.setCurrentAnimation('run');
 
     for (var ability in game.abilities) {
@@ -80,15 +81,24 @@ game.Player = me.Entity.extend({
       }).bind(this), 500);
     }
 
-    if (this.body.vel.x === 0 && !this.renderable.isCurrentAnimation("dash")) {
+    if (this.body.vel.x === 0 && !this.renderable.isCurrentAnimation("dash") && !this.renderable.isCurrentAnimation('glide')) {
       this.renderable.setCurrentAnimation("dash");
     }
 
     if (me.input.isKeyPressed('jump')) {
       this.jumpState = (this.body.vel.y === 0)?1:this.jumpState;
+
+      if (this.canGlide && !this.gliding && this.body.jumping) {
+        this.glideTime = me.timer.getTime();
+        this.gliding = true;
+        this.body.setVelocity(8, 0);
+        this.jumpState = 2;
+        this.renderable.setCurrentAnimation('glide');
+      }
+
       this.body.jumping = true;
 
-      if (this.jumpState <= 1) {
+      if (!this.gliding && this.jumpState <= 1) {
         this.body.vel.y -= (this.body.maxVel.y * this.jumpState++) * me.timer.tick;
       }
     }
@@ -115,7 +125,7 @@ game.Player = me.Entity.extend({
   },
 
   movementSetup: function () {
-    if(!this.renderable.isCurrentAnimation('run')) {
+    if(!this.renderable.isCurrentAnimation('run') && !this.renderable.isCurrentAnimation('glide')) {
       this.renderable.setCurrentAnimation('run');
     }
   },
@@ -162,10 +172,6 @@ game.Player = me.Entity.extend({
     this.body.setVelocity(22, 30);
   },
 
-  setDefaultAnimation: function () {
-    this.renderable.setCurrentAnimation('run');
-  },
-
   setMovementVelocity: function () {
     this.body.setVelocity(5, 21);
   },
@@ -189,11 +195,16 @@ game.Player = me.Entity.extend({
       this.handleInput();
     }
 
+    if (this.gliding && me.timer.getTime() - this.glideTime >= 1000) {
+      this.gliding = false;
+      this.renderable.setCurrentAnimation('run');
+      this.setMovementVelocity();
+    }
+
     this.body.update();
     me.collision.check(this);
 
-    if (this.body.vel.x !== 0 || this.body.vel.y !== 0 || this.health <= 0) {
-      console.log(this.flickerDuration);
+    if (this.body.vel.x !== 0 || this.body.vel.y !== 0 || this.health <= 0 || this.gliding) {
       this._super(me.Entity, 'update', [time]);
     }
     else if(this.dashing) {

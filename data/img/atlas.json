@@ -122,7 +122,7 @@
 },
 {
 	"filename": "glide.png",
-	"frame": {"x":1870,"y":255,"w":50,"h":50},
+	"frame": {"x":1870,"y":287,"w":50,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
@@ -130,7 +130,7 @@
 },
 {
 	"filename": "greenthing.png",
-	"frame": {"x":1870,"y":221,"w":128,"h":32},
+	"frame": {"x":1870,"y":253,"w":128,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
@@ -154,15 +154,15 @@
 },
 {
 	"filename": "player.png",
-	"frame": {"x":1870,"y":89,"w":128,"h":96},
+	"frame": {"x":1870,"y":89,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":96},
-	"sourceSize": {"w":128,"h":96}
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
 },
 {
 	"filename": "redthing.png",
-	"frame": {"x":1870,"y":187,"w":128,"h":32},
+	"frame": {"x":1870,"y":219,"w":128,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
@@ -191,6 +191,6 @@
 	"format": "RGBA8888",
 	"size": {"w":2048,"h":2048},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:ea02eec7e9b1fa3572e67d246ec172bc:01f7da819a66c38eaeb5bcb1a7e50f32:cbce6b53f0f49e0bf15173c25c41f876$"
+	"smartupdate": "$TexturePacker:SmartUpdate:d6b2d701ced1309992024fd40c26b43d:08dc5ec5da29fadf28f05596b70cafd0:cbce6b53f0f49e0bf15173c25c41f876$"
 }
 }
