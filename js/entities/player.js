@@ -106,7 +106,7 @@ game.Player = me.Entity.extend({
       this.jumpState = 1;
     }
 
-    if (me.input.isKeyPressed('dash') && !this.dashing && this.body.jumping) {
+    if (me.input.isKeyPressed('dash') && !this.dashing && this.body.vel.y !== 0) {
       this.dashing = true;
       this.setDashVelocity();
       var mousePos = me.game.viewport.localToWorld(me.input.mouse.pos.x, me.input.mouse.pos.y);
