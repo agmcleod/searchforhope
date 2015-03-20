@@ -48,6 +48,7 @@ game.PlayScreen = me.ScreenObject.extend({
       'leveltwod': 'Ld29p1',
       'levelthreea': 'Ld29p2',
       'levelthreeb': 'Ld29p2',
+      'levelthreec': 'Ld29p2',
       'final': 'Ld29final'
     };
 
