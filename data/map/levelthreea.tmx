@@ -31,6 +31,13 @@
    </properties>
   </object>
   <object name="glide" x="285" y="333" width="50" height="50"/>
+  <object name="me.LevelEntity" x="3182.58" y="156.783" width="14.9144" height="513.986">
+   <properties>
+    <property name="duration" value="150"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="levelthreeb"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="collision">
   <object x="1" y="385" width="382" height="198"/>
