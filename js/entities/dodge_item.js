@@ -4,9 +4,12 @@ game.DodgeItem = me.Entity.extend({
     var region = game.atlas.getRegion("dodge.png");
     this.renderable = new me.Sprite(0, 0, game.atlas.getTexture(), region.width, region.height);
     this.renderable.offset.setV(region.offset);
+    this.body.addShape(new me.Rect(0, 0, this.width, this.height));
+    this.body.setVelocity(0, 0);
     this.body.collisionType = me.collision.types.COLLECTABLE_OBJECT;
     this.type = 'dodge';
     this.triggered = false;
+    this.z = 3;
   },
 
   onCollision: function (res, obj) {

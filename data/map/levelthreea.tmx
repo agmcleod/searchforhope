@@ -30,7 +30,6 @@
     <property name="to_y" value="2464"/>
    </properties>
   </object>
-  <object name="glide" x="285" y="333" width="50" height="50"/>
   <object name="me.LevelEntity" x="3182.58" y="156.783" width="14.9144" height="513.986">
    <properties>
     <property name="duration" value="150"/>

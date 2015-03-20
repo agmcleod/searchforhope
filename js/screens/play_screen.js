@@ -12,6 +12,15 @@ game.PlayScreen = me.ScreenObject.extend({
     me.levelDirector.loadLevel(this.checkpoint);
   },
 
+  loadPickupNPC: function (levelName) {
+    if (levelName === "leveloneb" && !game.abilities.Dodge) {
+      me.game.world.addChild(me.pool.pull("dodgeitem", 1339, 478, { width: 32, height: 32 }));
+    }
+    if (levelName === "levelthreea" && !game.abilities.Glide) {
+      me.game.world.addChild(me.pool.pull("glide", 285, 333, { width: 50, height: 50 }));
+    }
+  },
+
   lowerHealth: function() {
     this.playerHealth--;
   },
@@ -65,6 +74,8 @@ game.PlayScreen = me.ScreenObject.extend({
       else if (levelName.indexOf('levelthree') !== -1) {
         _this.checkpoint = 'levelthreea';
       }
+
+      _this.loadPickupNPC(levelName);
 
       if (levelName === 'surfacetwo' && !_this.surfaceTwoTextShown) {
         _this.surfaceTwoTextShown = true;
