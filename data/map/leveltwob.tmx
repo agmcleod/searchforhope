@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="20" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32">
-  <image source="../img/tiles.png" width="160" height="192"/>
+  <image source="../img/tiles.png" width="160" height="288"/>
  </tileset>
  <imagelayer name="background">
   <image source="../img/leveltwobg.png"/>
@@ -26,7 +26,7 @@
     <property name="to_y" value="544"/>
    </properties>
   </object>
-  <object name="shooter" x="1343.61" y="319.003" width="32" height="32"/>
+  <object name="shooter" x="1343.61" y="321.003" width="32" height="32"/>
   <object name="me.LevelEntity" x="1565" y="95" width="32" height="256">
    <properties>
     <property name="duration" value="150"/>

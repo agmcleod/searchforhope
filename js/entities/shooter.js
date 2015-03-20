@@ -1,16 +1,11 @@
-game.Shooter = me.Renderable.extend({
+game.Shooter = me.Sprite.extend({
   init: function (x, y, settings) {
-    this._super(me.Renderable, "init", [x, y, 32, 32]);
+    var region = game.atlas.getRegion("shooter.png");
+    this._super(me.Sprite, "init", [x, y, game.atlas.getTexture(), region.width, region.height]);
+    this.offset.setV(region.offset);
   },
 
   destroy: function () {},
-
-  draw: function (renderer) {
-    var color = renderer.getColor();
-    renderer.setColor("#ff0000");
-    renderer.fillRect(this.pos.x, this.pos.y, this.width, this.height);
-    renderer.setColor(color);
-  },
 
   onActivateEvent: function () {
     var _this = this;

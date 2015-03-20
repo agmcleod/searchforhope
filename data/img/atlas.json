@@ -34,7 +34,7 @@
 },
 {
 	"filename": "dodge.png",
-	"frame": {"x":2000,"y":89,"w":32,"h":32},
+	"frame": {"x":2000,"y":123,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -169,6 +169,14 @@
 	"sourceSize": {"w":128,"h":32}
 },
 {
+	"filename": "shooter.png",
+	"frame": {"x":2000,"y":89,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
 	"filename": "surfacetwomsg1.png",
 	"frame": {"x":1222,"y":552,"w":250,"h":142},
 	"rotated": false,
@@ -191,6 +199,6 @@
 	"format": "RGBA8888",
 	"size": {"w":2048,"h":2048},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:d6b2d701ced1309992024fd40c26b43d:08dc5ec5da29fadf28f05596b70cafd0:cbce6b53f0f49e0bf15173c25c41f876$"
+	"smartupdate": "$TexturePacker:SmartUpdate:4a4500eee2dbf8395b4c0ac823f6d5aa:35f3adfc763b5d84345fd64f41eb9eab:cbce6b53f0f49e0bf15173c25c41f876$"
 }
 }
