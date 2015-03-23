@@ -82,10 +82,6 @@ game.PlayScreen = me.ScreenObject.extend({
         _this.surfaceTwoTextShown = true;
         _this.startDialogue(game.player.pos.x, game.player.pos.y, ["surfacetwomsg1.png", "surfacetwomsg2.png"], game.player.pos);
       }
-      else if(levelName === 'final') {
-      }
-      else {
-      }
     });
 
     var levelString = location.hash.indexOf('#level=') !== -1 ? (location.hash + '').replace('#level=','') : 'intro';
@@ -112,6 +108,7 @@ game.PlayScreen = me.ScreenObject.extend({
   },
 
   registerEntities: function () {
+    me.pool.register('endgame', game.EndGame);
     me.pool.register('player', game.Player);
     me.pool.register('greenthing', game.GreenThing, true);
     me.pool.register('redthing', game.RedThing, true);
