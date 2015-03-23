@@ -1,6 +1,6 @@
 game.Shooter = me.Sprite.extend({
   init: function (x, y, settings) {
-    var region = game.atlas.getRegion("shooter.png");
+    var region = game.atlas.getRegion(settings.image || "shooter.png");
     this._super(me.Sprite, "init", [x, y, game.atlas.getTexture(), region.width, region.height]);
     this.offset.setV(region.offset);
   },

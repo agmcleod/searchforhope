@@ -25,8 +25,16 @@
    </properties>
   </object>
   <object name="player" x="64" y="643" width="32" height="32"/>
-  <object name="shooter" x="1505.11" y="985.486" width="32" height="32"/>
-  <object name="shooter" x="1605.45" y="886.938" width="32" height="32"/>
+  <object name="shooter" x="1505.11" y="985.486" width="32" height="32">
+   <properties>
+    <property name="image" value="shooterred.png"/>
+   </properties>
+  </object>
+  <object name="shooter" x="1605.45" y="886.938" width="32" height="32">
+   <properties>
+    <property name="image" value="shooterred.png"/>
+   </properties>
+  </object>
   <object name="blackthing" x="1922.59" y="734.635" width="64" height="64"/>
   <object name="blackthing" x="2298.87" y="732.844" width="64" height="64"/>
   <object name="me.LevelEntity" x="2542.56" y="290.271" width="12.5426" height="503.494">
