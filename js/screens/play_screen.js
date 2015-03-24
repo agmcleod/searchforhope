@@ -108,18 +108,19 @@ game.PlayScreen = me.ScreenObject.extend({
   },
 
   registerEntities: function () {
-    me.pool.register('endgame', game.EndGame);
-    me.pool.register('player', game.Player);
-    me.pool.register('greenthing', game.GreenThing, true);
-    me.pool.register('redthing', game.RedThing, true);
     me.pool.register('blackthing', game.BlackThing, true);
-    me.pool.register('dodgeitem', game.DodgeItem);
-    me.pool.register('glide', game.GlideItem);
-    me.pool.register('shooter', game.Shooter);
-    me.pool.register('projectile', game.Projectile);
-    me.pool.register('dialogue', game.Dialogue);
-    me.pool.register('game.PositionLevelEntity', game.PositionLevelEntity, false);
     me.pool.register('campsite', game.Campsite, false);
+    me.pool.register('dialogue', game.Dialogue);
+    me.pool.register('dodgeitem', game.DodgeItem);
+    me.pool.register('endgame', game.EndGame);
+    me.pool.register('game.PositionLevelEntity', game.PositionLevelEntity, false);
+    me.pool.register('glide', game.GlideItem);
+    me.pool.register('greenthing', game.GreenThing, true);
+    me.pool.register('greet', game.GreetNPC, false);
+    me.pool.register('player', game.Player);
+    me.pool.register('projectile', game.Projectile);
+    me.pool.register('redthing', game.RedThing, true);
+    me.pool.register('shooter', game.Shooter);
   },
 
   resetHealth: function() {

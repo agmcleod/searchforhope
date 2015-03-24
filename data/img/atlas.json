@@ -10,7 +10,7 @@
 },
 {
 	"filename": "campmsg2.png",
-	"frame": {"x":1474,"y":662,"w":250,"h":142},
+	"frame": {"x":1720,"y":806,"w":250,"h":142},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
@@ -18,7 +18,7 @@
 },
 {
 	"filename": "campmsgone.png",
-	"frame": {"x":1732,"y":518,"w":250,"h":142},
+	"frame": {"x":1468,"y":806,"w":250,"h":142},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
@@ -34,7 +34,7 @@
 },
 {
 	"filename": "dodge.png",
-	"frame": {"x":2000,"y":157,"w":32,"h":32},
+	"frame": {"x":2000,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -71,6 +71,38 @@
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":960,"h":640},
 	"sourceSize": {"w":960,"h":640}
+},
+{
+	"filename": "finalmessagefour.png",
+	"frame": {"x":1726,"y":662,"w":250,"h":142},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
+	"sourceSize": {"w":250,"h":142}
+},
+{
+	"filename": "finalmessageone.png",
+	"frame": {"x":1216,"y":696,"w":250,"h":142},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
+	"sourceSize": {"w":250,"h":142}
+},
+{
+	"filename": "finalmessagethree.png",
+	"frame": {"x":1474,"y":662,"w":250,"h":142},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
+	"sourceSize": {"w":250,"h":142}
+},
+{
+	"filename": "finalmessagetwo.png",
+	"frame": {"x":1732,"y":518,"w":250,"h":142},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":142},
+	"sourceSize": {"w":250,"h":142}
 },
 {
 	"filename": "floatmessagefive.png",
@@ -122,7 +154,7 @@
 },
 {
 	"filename": "glide.png",
-	"frame": {"x":1870,"y":287,"w":50,"h":50},
+	"frame": {"x":1870,"y":200,"w":50,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
@@ -130,7 +162,7 @@
 },
 {
 	"filename": "greenthing.png",
-	"frame": {"x":1870,"y":253,"w":128,"h":32},
+	"frame": {"x":1870,"y":166,"w":128,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
@@ -145,16 +177,8 @@
 	"sourceSize": {"w":250,"h":142}
 },
 {
-	"filename": "messagetwo.png",
-	"frame": {"x":1870,"y":2,"w":150,"h":85},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":85},
-	"sourceSize": {"w":150,"h":85}
-},
-{
 	"filename": "player.png",
-	"frame": {"x":1870,"y":89,"w":128,"h":128},
+	"frame": {"x":1870,"y":2,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -162,7 +186,7 @@
 },
 {
 	"filename": "redthing.png",
-	"frame": {"x":1870,"y":219,"w":128,"h":32},
+	"frame": {"x":1870,"y":132,"w":128,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":32},
@@ -170,7 +194,7 @@
 },
 {
 	"filename": "shooter.png",
-	"frame": {"x":2000,"y":123,"w":32,"h":32},
+	"frame": {"x":2000,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -178,7 +202,7 @@
 },
 {
 	"filename": "shooterred.png",
-	"frame": {"x":2000,"y":89,"w":32,"h":32},
+	"frame": {"x":2000,"y":2,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -207,6 +231,6 @@
 	"format": "RGBA8888",
 	"size": {"w":2048,"h":2048},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:d91f5a990b6dce06bfcc7462ba4094af:86dd387952fb589c14132f7d7cb7b04d:cbce6b53f0f49e0bf15173c25c41f876$"
+	"smartupdate": "$TexturePacker:SmartUpdate:85f0f41e2c649290be520ce45ed48825:ca4068a32a7fa6fa0947ef03c27fb63a:cbce6b53f0f49e0bf15173c25c41f876$"
 }
 }

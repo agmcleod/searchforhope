@@ -25,7 +25,8 @@
  </layer>
  <objectgroup name="entities">
   <object name="endgame" x="1570.37" y="167.901" width="18.107" height="437.86"/>
-  <object name="player" x="39.5062" y="573.354" width="32" height="32"/>
+  <object name="player" x="55.321" y="573.354" width="32" height="32"/>
+  <object name="greet" x="233.745" y="576.008" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="collision">
   <object x="3.29218" y="609.053" width="1595.06" height="31.2757"/>
