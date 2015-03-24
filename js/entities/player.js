@@ -75,7 +75,7 @@ game.Player = me.Entity.extend({
     if (me.input.isKeyPressed('dodge') && this.canDodge && !this.dodging) {
       this.dodging = true;
       this.renderable.setOpacity(0.5);
-      me.timer.setTimeout((function () {
+      this.timeout = me.timer.setTimeout((function () {
         this.dodging = false;
         this.renderable.setOpacity(1);
       }).bind(this), 500);
@@ -166,6 +166,12 @@ game.Player = me.Entity.extend({
 
 
     };
+  },
+
+  onDeactivateEvent: function () {
+    if (this.timeout) {
+      me.timer.clearTimeout(this.timeout);
+    }
   },
 
   setDashVelocity: function () {

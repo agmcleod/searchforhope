@@ -10,6 +10,9 @@ game.enemy = {
     else if (obj.body.collisionType === me.collision.types.ENEMY_OBJECT) {
       return false;
     }
+    else if (obj.dodging) {
+      return false;
+    }
     else {
       return true;
     }
