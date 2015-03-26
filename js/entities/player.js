@@ -64,11 +64,13 @@ game.Player = me.Entity.extend({
         this.renderable.flipX(true);
         this.body.vel.x -= this.body.accel.x * me.timer.tick;
         this.movementSetup();
+        game.playScreen.nextInstructions("left");
       }
       else if (me.input.isKeyPressed('right')) {
         this.renderable.flipX(false);
         this.body.vel.x += this.body.accel.x * me.timer.tick;
         this.movementSetup();
+        game.playScreen.nextInstructions("right");
       }
     }
 
@@ -86,6 +88,7 @@ game.Player = me.Entity.extend({
     }
 
     if (me.input.isKeyPressed('jump')) {
+      game.playScreen.nextInstructions("jump");
       this.jumpState = (this.body.vel.y === 0)?1:this.jumpState;
 
       if (this.canGlide && !this.gliding && this.jumpState > 1) {
@@ -158,6 +161,14 @@ game.Player = me.Entity.extend({
         else if (other.type === "lava") {
           this.health = 0;
           this.takeDamage();
+        }
+        else if (other.type === 'dashpoint') {
+          game.playScreen.nextInstructions("dash");
+          return false;
+        }
+        else if (other.type === 'dashhide') {
+          game.playScreen.nextInstructions("dashhide");
+          return false;
         }
         return true;
         break;

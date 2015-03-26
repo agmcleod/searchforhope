@@ -87,11 +87,8 @@ game.PlayScreen = me.ScreenObject.extend({
     var levelString = location.hash.indexOf('#level=') !== -1 ? (location.hash + '').replace('#level=','') : 'intro';
 
     me.levelDirector.loadLevel(levelString);
-
-    if (levelString === "intro") {
-      var player = me.game.world.getChildByName('player')[0];
-      this.startDialogue(player.pos.x, player.pos.y, ["messageone.png"], player.pos);
-    }
+    this.instructionsComplete = false;
+    game.InstructionsManager.init();
   },
 
 
@@ -107,6 +104,12 @@ game.PlayScreen = me.ScreenObject.extend({
     me.input.unbindPointer();
   },
 
+  nextInstructions: function (state) {
+    if (!this.instructionsComplete) {
+      this.instructionsComplete = game.InstructionsManager.nextState(state);
+    }
+  },
+
   registerEntities: function () {
     me.pool.register('blackthing', game.BlackThing, true);
     me.pool.register('campsite', game.Campsite, false);
@@ -117,6 +120,7 @@ game.PlayScreen = me.ScreenObject.extend({
     me.pool.register('glide', game.GlideItem);
     me.pool.register('greenthing', game.GreenThing, true);
     me.pool.register('greet', game.GreetNPC, false);
+    me.pool.register('me.Tween', me.Tween);
     me.pool.register('player', game.Player);
     me.pool.register('projectile', game.Projectile);
     me.pool.register('redthing', game.RedThing, true);
