@@ -1,0 +1,36 @@
+{"frames": [
+
+{
+	"filename": "backbackcity.png",
+	"frame": {"x":2,"y":1535,"w":1252,"h":461},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":9,"w":1252,"h":461},
+	"sourceSize": {"w":1252,"h":473}
+},
+{
+	"filename": "backcity.png",
+	"frame": {"x":2,"y":2,"w":1256,"h":617},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":10,"w":1256,"h":617},
+	"sourceSize": {"w":1256,"h":627}
+},
+{
+	"filename": "forwardcity.png",
+	"frame": {"x":2,"y":621,"w":1226,"h":912},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":30,"y":112,"w":1226,"h":912},
+	"sourceSize": {"w":1256,"h":1024}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "titleatlas0.png",
+	"format": "RGBA8888",
+	"size": {"w":1998,"h":1998},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:9b9283842c3b17341f787b34b0232e71:2ca35b3b1c2cefaeb94e843bf89b8318:461c6615dcd9f07b96246bef0b7f874f$"
+}
+}
