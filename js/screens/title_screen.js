@@ -5,7 +5,7 @@ game.TitleScreen = me.ScreenObject.extend({
     var clouds = atlas1.createSpriteFromName("clouds.png");
     this.centerOnX(clouds);
     clouds.pos.y = - 100;
-    this.tweenForSprite(clouds.pos, { y: 0}, 1000);
+    this.tweenForSprite(clouds.pos, { y: 0}, 1500);
     me.game.world.addChild(clouds, 2);
   },
 
@@ -25,7 +25,7 @@ game.TitleScreen = me.ScreenObject.extend({
   addForeGround: function (atlas1) {
     var foreGround = atlas1.createSpriteFromName("foreground.png");
     foreGround.pos.y = me.game.viewport.height - 50;
-    this.tweenForSprite(foreGround.pos, { y: me.game.viewport.height - foreGround.height }, 1550, (function () {
+    this.tweenForSprite(foreGround.pos, { y: me.game.viewport.height - foreGround.height }, 1500, (function () {
       var title = atlas1.createSpriteFromName("title.png");
       title.alpha = 0.0;
       title.pos.y = me.game.viewport.height / 2 - title.height / 2;
@@ -70,7 +70,7 @@ game.TitleScreen = me.ScreenObject.extend({
   },
 
   tweenForSprite: function (object, targetObject, duration, callback) {
-    var tween = me.pool.pull("me.Tween", object).to(targetObject, duration).easing(me.Tween.Easing.Sinusoidal.Out).start();
+    var tween = me.pool.pull("me.Tween", object).to(targetObject, duration * 1.8).easing(me.Tween.Easing.Sinusoidal.Out).start();
     if (callback) {
       tween.onComplete(callback);
     }
