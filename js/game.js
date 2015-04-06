@@ -47,6 +47,11 @@ var game = {
     me.state.set(me.state.MENU, new game.TitleScreen());
 
     // Start the game.
-    me.state.change(me.state.MENU);
+    if (location.hash.indexOf('#level=') === -1) {
+      me.state.change(me.state.MENU);
+    }
+    else {
+      me.state.change(me.state.PLAY);
+    }
   }
 };

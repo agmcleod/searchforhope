@@ -87,7 +87,9 @@ game.PlayScreen = me.ScreenObject.extend({
     var levelString = location.hash.indexOf('#level=') !== -1 ? (location.hash + '').replace('#level=','') : 'intro';
     me.levelDirector.loadLevel(levelString);
     this.instructionsComplete = levelString !== "intro";
-    game.InstructionsManager.init();
+    if (!this.instructionsComplete) {
+      game.InstructionsManager.init();
+    }
     me.game.viewport.fadeOut("#000000", 500);
   },
 
