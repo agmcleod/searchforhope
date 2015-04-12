@@ -5,17 +5,20 @@
  </tileset>
  <imagelayer name="background">
   <image source="../img/surfacetwobg.png"/>
+  <properties>
+   <property name="ratio" value="0.1"/>
+  </properties>
  </imagelayer>
  <imagelayer name="hills">
   <image source="../img/hills.png"/>
   <properties>
-   <property name="ratio" value="0.8"/>
+   <property name="ratio" value="0.2"/>
   </properties>
  </imagelayer>
  <imagelayer name="buildings">
   <image source="../img/surfacetwobuildings.png"/>
   <properties>
-   <property name="ratio" value="0.7"/>
+   <property name="ratio" value="0.3"/>
    <property name="repeat" value="no-repeat"/>
   </properties>
  </imagelayer>
